@@ -20,13 +20,13 @@ path = "echo -e '  '"
 static = true
 
 [workspaces]
-path = "bar_bspwm_workspaces"
+path = "bspwm-w"
 
 [title]
 path = "xtitle -s -t 100"
 
 [batteries]
-path = "bar_battery_level"
+path = "battery"
 reload = 10
 
 [clock]
@@ -34,5 +34,5 @@ path = "date '+%H%M '"
 reload = 1
 
 [internet]
-path = "bar_internet"
+path = "internet"
 reload = 60

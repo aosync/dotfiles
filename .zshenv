@@ -9,8 +9,9 @@ export XDG_CACHE_HOME="$VAR/cache"
 export XDG_CONFIG_HOME="$ETC"
 export XDG_DATA_HOME="$USR/local/share"
 
-export PATH="$XDG_CONFIG_HOME/xorg.d/bin:$PATH"
-export PATH="$XDG_CONFIG_HOME/xorg.d/wm.d/bin:$PATH"
+export PATH="$BIN/x:$PATH"
+export PATH="$BIN/wm:$PATH"
+export PATH="$BIN/wrap:$PATH"
 export PATH="$BIN:$PATH"
 export PATH="$PATH:$OPT/cargo/bin"
 

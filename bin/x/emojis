@@ -1,4 +1,4 @@
 #!/bin/sh
 
-emoji=$(cat "$HOME/.local/share/resources/emoji" | rofi -dmenu | cut -d' ' -f1)
+emoji=$(cat "$XDG_DATA_HOME/resources/emoji" | rofi -dmenu | cut -d' ' -f1)
 [[ $emoji = "" ]] || ( echo -n "$emoji" | xclip -selection clipboard -i && dunstify -u low "$emoji saved to the clipboard" )

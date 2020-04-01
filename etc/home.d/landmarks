@@ -13,5 +13,6 @@ D "$HOME/med/doc"
 d "$HOME/usr/doc"
 M "$HOME/med"
 Z "$HOME/etc/zsh"
+w "$HOME/bin/wrap"
 m /mnt
 EOF
