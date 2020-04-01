@@ -16,8 +16,8 @@ export PATH="$PATH:$OPT/cargo/bin"
 
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-export WALL="$XDG_CONFIG_HOME/wall.png"
-export WALL_BLURRED="$XDG_CONFIG_HOME/wall_b.png"
+#export WALL="$XDG_CONFIG_HOME/wall.png"
+export WALL_BLURRED="$XDG_CONFIG_HOME/wall_b.png" # Not needed until I use xwallpaper
 
 export EDITOR="nvim"
 export VISUAL="nvim"

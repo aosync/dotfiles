@@ -1,5 +1,0 @@
-#!/bin/sh
-
-/usr/bin/wal $@
-
-gm convert "$(cat $XDG_CACHE_HOME/wal/wal)" -resize 1920x1080 "$WALL"

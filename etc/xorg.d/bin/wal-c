@@ -1,0 +1,8 @@
+#!/bin/sh
+
+wal -st -i $1
+
+fx3=""
+fx3="$fx3 -scale 25% -blur 0x8 -scale 400%"
+fx3="$fx3 -fill #000 -colorize 32%"
+gm convert "$1" -resize 1920x1080 $fx3 "$WALL_BLURRED"

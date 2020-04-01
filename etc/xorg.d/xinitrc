@@ -22,7 +22,7 @@ pulseaudio -D
 
 redshift -t 6500:3900 & #
 
-/usr/bin/wal -st -R
+wal -st -R
 
 picom -b
 
