@@ -24,8 +24,6 @@ redshift -t 6500:3900 & #
 
 /usr/bin/wal -st -R
 
-# feh-blur -d -b 8 --save-image "$WALL_BLURRED" # Blur is disabled because I want to see how it is
-
 picom -b
 
 xsetroot -cursor_name left_ptr
