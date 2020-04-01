@@ -22,9 +22,9 @@ pulseaudio -D
 
 redshift -t 6500:3900 & #
 
-wal -st -R
+/usr/bin/wal -st -R
 
-feh-blur -d -b 8 --save-image "$WALL_BLURRED"
+# feh-blur -d -b 8 --save-image "$WALL_BLURRED" # Blur is disabled because I want to see how it is
 
 picom -b
 

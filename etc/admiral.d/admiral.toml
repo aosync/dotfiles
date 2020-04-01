@@ -30,7 +30,7 @@ path = "bar_battery_level"
 reload = 10
 
 [clock]
-path = "date '+%-H%M '"
+path = "date '+%H%M '"
 reload = 1
 
 [internet]

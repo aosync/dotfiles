@@ -80,7 +80,7 @@ generate_blurred_images () {
   local source="$1"
   local original="$CACHE_DIR/original.$EXT"
 
-  gm convert "$source" -resize 1920x "$original"
+  [ $MODE != "justblur" ] && gm convert "$source" -resize 1920x "$original"
 
   head "Found wallpaper"
   info "$source"
@@ -108,20 +108,30 @@ generate_blurred_images () {
     fx3="$fx3 -fill $DIM_COLOR -colorize $(( "$DIM_STRENGTH" / 1 ))%"
   fi
 
-  gm convert "$original" \
-    $fx1 \
-    "$CACHE_DIR/blur-0.$EXT"
-  gm convert "$CACHE_DIR/blur-0.$EXT" \
-    $fx2 \
-    "$CACHE_DIR/blur-1.$EXT"
-  gm convert "$CACHE_DIR/blur-0.$EXT" \
-    $fx3 \
-    "$CACHE_DIR/blur-final.$EXT"
+  if [ $MODE != "justblur" ]; then
+      gm convert "$original" \
+        $fx1 \
+        "$CACHE_DIR/blur-0.$EXT"
+
+      gm convert "$CACHE_DIR/blur-0.$EXT" \
+        $fx2 \
+        "$CACHE_DIR/blur-1.$EXT"
+
+      gm convert "$CACHE_DIR/blur-0.$EXT" \
+        $fx3 \
+        "$CACHE_DIR/blur-final.$EXT"
+  fi
 
   if [[ -n "$BLUR_IMAGE_SAVE_LOCATION" ]]; then
-    gm convert \
-      "$CACHE_DIR/blur-final.$EXT" \
-      "$BLUR_IMAGE_SAVE_LOCATION"
+	if [ $MODE != "justblur" ]; then
+      gm convert \
+        "$CACHE_DIR/blur-final.$EXT" \
+        "$BLUR_IMAGE_SAVE_LOCATION"
+	else
+	  gm convert "$source" \
+	    $fx3 \
+	    "$BLUR_IMAGE_SAVE_LOCATION"
+    fi
   fi
 
   info "Done."
@@ -309,6 +319,9 @@ parse_opts() {
     -d | --daemon )
       MODE=background
       ;;
+    -j | --just-blur )
+      MODE=justblur
+	  ;;
     -s | --stop )
       MODE=stop
       ;;
@@ -371,6 +384,12 @@ main() {
   
     stop)
       kill_other_instances
+      ;;
+
+	justblur)
+      head "Just blurring then exitting"
+	  w=$(get_feh_wallpaper)
+      generate_blurred_images "$w"
       ;;
 
     noop)

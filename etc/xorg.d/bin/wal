@@ -1,0 +1,10 @@
+#!/bin/sh
+
+result=$(ps aux | grep -i "feh-blur" | grep -v "grep" | wc -l)
+
+if [ $result -ge 1 ]; then
+	/usr/bin/wal $@
+else
+	/usr/bin/wal $@
+	feh-blur -b 8 --save-image "$WALL_BLURRED" --just-blur
+fi
