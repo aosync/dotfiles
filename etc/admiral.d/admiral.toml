@@ -1,0 +1,38 @@
+[admiral]
+items = ["left", "workspaces",
+         "center", "title",
+         "right", "internet", "space", "batteries", "space", "clock"]
+
+[left]
+path = "echo '%{l}'"
+static = true
+
+[center]
+path = "echo '%{c}'"
+static = true
+
+[right]
+path = "echo '%{r}'"
+static = true
+
+[space]
+path = "echo -e '  '"
+static = true
+
+[workspaces]
+path = "bar_bspwm_workspaces"
+
+[title]
+path = "xtitle -s -t 100"
+
+[batteries]
+path = "bar_battery_level"
+reload = 10
+
+[clock]
+path = "date '+%-H%M '"
+reload = 1
+
+[internet]
+path = "bar_internet"
+reload = 60

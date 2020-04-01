@@ -1,0 +1,51 @@
+#!/bin/sh
+
+buff=""
+
+for battery in /sys/class/power_supply/BAT?
+do
+    capacity=$(cat "$battery/capacity")
+    status=$(cat "$battery/status")
+
+    if [ "$status" = "Charging" ] || [ "$status" = "Full" ]; then
+        icon=
+    else
+        if [ "$capacity" -gt "75" ]; then
+            icon=""
+        elif [ "$capacity" -gt "50" ]; then
+            icon=""
+        elif [ "$capacity" -gt "25" ]; then
+            icon=""
+        elif [ "$capacity" -gt "8" ]; then
+            icon=""
+        else
+            icon='%{F#8B0000}%{F-}'
+        fi
+    fi
+    data=$(printf "%s %s " "$icon" "$capacity%")
+    buff="$buff$data"
+done
+
+
+
+echo $buff | awk '{$1=$1};1'
+
+#LEVEL0=$(cat /sys/class/power_supply/BAT0/capacity)
+#LEVEL1=$(cat /sys/class/power_supply/BAT1/capacity)
+#STATUS=$(cat /sys/class/power_supply/AC/online)
+#
+#if [ "$STATUS" = "1" ]; then
+#    echo -n ""
+#elif [ "$LEVEL1" -gt "75" ]; then
+#    echo -n ""
+#elif [ "$LEVEL1" -gt "50" ]; then
+#    echo -n ""
+#elif [ "$LEVEL1" -gt "25" ]; then
+#    echo -n ""
+#elif [ "$LEVEL1" -gt "8" ]; then
+#    echo -n ""
+#else
+#    echo -n '%{F#8B0000}%{F-}'
+#fi
+#
+#echo " BAT0: $LEVEL0% | BAT1: $LEVEL1%"

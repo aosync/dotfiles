@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export BIN="$HOME/bin"
+export ETC="$HOME/etc"
+export MED="$HOME/med"
+export OPT="$HOME/opt"
+export USR="$HOME/usr"
+export VAR="$HOME/var"

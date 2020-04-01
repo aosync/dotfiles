@@ -1,0 +1,20 @@
+#!/bin/sh
+
+DIALOG_RESULT=$(echo -e 'exit bspwm\nsuspend\nreboot\nshutdown' | rofi -dmenu -i -p "power options" -hide-scrollbar -tokenize -lines 5 -disable-history)
+
+echo "This result is : $DIALOG_RESULT"
+sleep 1;
+
+if [ "$DIALOG_RESULT" = "exit bspwm" ];
+then
+    bspc quit
+elif [ "$DIALOG_RESULT" = "suspend" ];
+then
+    exec systemctl suspend
+elif [ "$DIALOG_RESULT" = "reboot" ];
+then
+    exec reboot
+elif [ "$DIALOG_RESULT" = "shutdown" ];
+then
+    exec shutdown -h now
+fi

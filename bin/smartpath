@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Get git repo name
+
+repo_path=$(git rev-parse --show-toplevel)
+
+if [ ! -z "$repo_path" ]; then
+    repo=$(basename "$repo_path")
+    branch=$(git branch | grep \* | cut -d ' ' -f2)
+    echo $(pwd | sed "s|^$repo_path\(.*\)|git@$repo\1:$branch|") && exit 1
+fi
+
+echo $(pwd | sed "s|^$HOME\(.*\)|~\1|")

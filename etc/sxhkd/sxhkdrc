@@ -1,0 +1,127 @@
+###########
+# Misc keys
+###########
+
+# Reload sxhkd config
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Start terminal
+super + Return
+	st
+
+# Rofi
+super + d
+	rofi -show run
+
+# Rofi computer
+super + g
+	bash rofi-computer
+
+# Ranger
+super + r
+	st ranger
+
+# Start firefox
+super + shift + f
+    firefox
+
+# Start google keep
+super + shift + k
+    firefox https://keep.google.com
+
+# Start google calendar
+super + shift + c
+    firefox https://calendar.google.com
+
+# Start gmail
+super + shift + g
+    firefox https://mail.google.com
+
+# Open emoji menu
+super + shift + e
+    emojis
+
+# Lock screen
+super + shift + x
+	betterlockscreen -l
+
+# Prevent lock screen on lid close
+super + shift + b
+    lockpreventswitch
+
+# Entire screen
+Print
+    maim -u --format=png /dev/stdout | xclip -selection clipboard -t image/png -i && notify-send -u low "Sreenshot done"
+
+# Region screenshot
+alt + Print
+    maim -s -u --format=png /dev/stdout | xclip -selection clipboard -t image/png -i && notify-send -u low "Region screenshot done"
+
+# Volume
+XF86AudioLowerVolume
+	amixer sset 'Master' 2%-
+
+XF86AudioRaiseVolume
+	amixer sset 'Master' 2%+
+
+XF86AudioMute
+	amixer sset 'Master' toggle
+
+# Brightness
+XF86MonBrightnessDown
+    xbacklight -dec 10
+
+XF86MonBrightnessUp
+    xbacklight -inc 10
+
+# Bluetooth
+shift + XF86Tools
+    sudo bluetoothctl power off && dunstify -u low "Bluetooth: off"
+
+XF86Tools
+    sudo bluetoothctl power on && dunstify -u low "Bluetooth: on"
+
+XF86Search
+    st sudo bluetoothctl
+
+
+#######
+# bspwm
+#######
+
+# Close window
+super + q
+	bspc node -c
+
+# Restart bspwm
+super + alt + r}
+	bspc wm -r
+
+# Switch between windows
+super + {comma,semicolon}
+	bspc node -f {next,prev}.local
+
+# Change node flag
+super + {t,shift + t, s, f}
+	bspc node -f -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# Change desktop
+super + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
+	bspc {desktop -f,node -f -d} {I,II,III,IV,V,VI,VII,VIII,IX,X}
+
+# Change window
+super + {_,shift+}{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+# Expand size
+super + alt + {h,j,k,l}
+	bspc node -f -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Shrink size
+super + alt + shift + {h,j,k,l}
+	bspc node -f -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
+
+# Move a floating window
+super control + {h,j,k,l}
+	bspc node -f -v {-20 0,0 20,0 -20,20 0}

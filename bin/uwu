@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo ip link set wlp3s0 down
+sudo rfkill unblock 3
+sudo ip link set wlp3s0 up

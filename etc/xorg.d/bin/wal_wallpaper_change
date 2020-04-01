@@ -1,0 +1,4 @@
+#!/bin/sh
+
+wal -st -i $HOME/Content/wallpapers
+bspc wm -r

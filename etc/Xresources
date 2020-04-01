@@ -1,0 +1,188 @@
+!.Xdefaults file
+!-----------------
+
+
+! Set transparancy
+*alpha: 0.96
+
+! Set font
+! *.font: Inconsolata for Powerline:style=Medium:pixelsize=14:antialias=true:autohint=true
+! *font: DejaVu Sans Mono for Powerline:style=book:pixelsize=14:antialias=true:autohint=true
+*font: cherry:style=Regular:pixelsize=11:antialias=false:autohint=false
+
+! Rofi settings
+! rofi*font: DejaVu Sans Mono for Powerline 15
+rofi*font: cherry 11
+rofi*lines: 4
+rofi*eh: 2
+rofi*width: 50
+rofi*padding: 50
+rofi*color-enabled: true
+rofi*color-window: argb:ee273238, #273238, argb:3a1e2529
+rofi*color-normal: argb:00273238, #c1c1c1, argb:3a273238, #394249, #ffffff
+rofi*color-active: argb:00273238, #80cbc4, argb:3a273238, #394249, #80cbc4
+rofi*color-urgent: argb:00273238, #ff1844, argb:3a273238, #394249, #ff1844
+rofi*theme: var/cache/wal/colors-rofi-dark
+
+betterlockscreen*font: Cantarell
+
+! Solarized
+!
+! st.cursorColor: #93a1a1
+! st.background:  #002b36
+! st.foreground:  #839496
+! st.color0:      #073642
+! st.color1:      #dc322f
+! st.color2:      #859900
+! st.color3:      #b58900
+! st.color4:      #268bd2
+! st.color5:      #d33682
+! st.color6:      #2aa198
+! st.color7:      #eee8d5
+! st.color8:      #002b36
+! st.color9:      #cb4b16
+! st.color10:     #586e75
+! st.color11:     #fabd2f
+! st.color12:     #839496
+! st.color13:     #6c71c4
+! st.color14:     #93a1a1
+! st.color15:     #fdf6e3
+
+st*borderpx: 14
+
+! gruvbox dark
+
+#define gb_bg          #282828
+#define gb_fg          #ebdbb2
+#define gb_fg0         #fbf1c7
+#define gb_bg0_h       #1d2021
+#define gb_bg0_s       #32302f
+
+#define gb_dark_red    #cc241d
+#define gb_dark_green  #98971a
+#define gb_dark_yellow #d79921
+#define gb_dark_blue   #458588
+#define gb_dark_purple #b16286
+#define gb_dark_aqua   #689d6a
+#define gb_gray1       #a89984
+#define gb_gray2       #928374
+#define gb_red         #fb4934
+#define gb_green       #b8bb26
+#define gb_yellow      #fabd2f
+#define gb_blue        #83a598
+#define gb_purple      #d3869b
+#define gb_aqua        #8ec07c
+
+! Nord
+
+#define nord0  #2E3440
+#define nord1  #3B4252
+#define nord2  #434C5E
+#define nord3  #4C566A
+#define nord4  #D8DEE9
+#define nord5  #E5E9F0
+#define nord6  #ECEFF4
+#define nord7  #8FBCBB
+#define nord8  #88C0D0
+#define nord9  #81A1C1
+#define nord10 #5E81AC
+#define nord11 #BF616A
+#define nord12 #D08770
+#define nord13 #EBCB8B
+#define nord14 #A3BE8C
+#define nord15 #B48EAD
+
+
+! Set the global color here
+
+*background:  gb_bg
+*foreground:  gb_fg
+*cursorColor: gb_fg
+*color0:      gb_bg
+*color1:      gb_dark_red
+*color2:      gb_dark_green
+*color3:      gb_dark_yellow
+*color4:      gb_dark_blue
+*color5:      gb_dark_purple
+*color6:      gb_dark_aqua
+*color7:      gb_gray1
+*color8:      gb_gray2
+*color9:      gb_red
+*color10:     gb_green
+*color11:     gb_yellow
+*color12:     gb_blue
+*color13:     gb_purple
+*color14:     gb_aqua
+*color15:     gb_fg
+
+
+! Set st colors so they do not get changed with wal
+!
+! Nord
+!
+st*background:  nord0 
+st*foreground:  nord4
+st*cursorColor: nord4
+st*color0:      nord1
+st*color1:      nord11
+st*color2:      nord14
+st*color3:      nord13
+st*color4:      nord9
+st*color5:      nord15
+st*color6:      nord8
+st*color7:      nord5
+st*color8:      nord3
+st*color9:      nord11
+st*color10:     nord14
+st*color11:     nord13
+st*color12:     nord9
+st*color13:     nord15
+st*color14:     nord7
+st*color15:     nord6
+!
+! OR
+!
+! Gruvbox
+!
+! st*background:  gb_bg
+! st*foreground:  gb_fg
+! st*cursorColor: gb_fg
+! st*color0:      gb_bg
+! st*color1:      gb_dark_red
+! st*color2:      gb_dark_green
+! st*color3:      gb_dark_yellow
+! st*color4:      gb_dark_blue
+! st*color5:      gb_dark_purple
+! st*color6:      gb_dark_aqua
+! st*color7:      gb_gray1
+! st*color8:      gb_gray2
+! st*color9:      gb_red
+! st*color10:     gb_green
+! st*color11:     gb_yellow
+! st*color12:     gb_blue
+! st*color13:     gb_purple
+! st*color14:     gb_aqua
+! st*color15:     gb_fg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:

@@ -1,0 +1,41 @@
+#!/bin/sh
+
+userresources=$XDG_CONFIG_HOME/Xresources
+sysresources=/etc/X11/xinit/.Xresources
+
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+export LANG=en_US.UTF-8
+
+[ -f "$HOME/.profile" ] && . "$HOME/.profile"
+
+pulseaudio -D
+
+redshift -t 6500:3900 & #
+
+wal -st -R
+
+feh-blur -d -b 8 --save-image "$WALL_BLURRED"
+
+picom -b
+
+xsetroot -cursor_name left_ptr
+
+setxkbmap -layout us colemak
+sxhkd -m 1 &
+
+rm /tmp/lockp
+xss-lock /usr/bin/lockscreen &
+
+dunst &
+
+exec bspwm

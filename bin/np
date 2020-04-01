@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[ -z "$1" ] && exit 1
+
+if [ "$2" = "-s" ]; then
+	l=$(curl -s -F"shorten=$1" http://0x0.st)
+elif [ "$2" = "-u" ]; then
+	l=$(curl -s -F"url=$1" http://0x0.st)
+else
+	l=$(curl -s -F"file=@$1" http://0x0.st)
+fi
+
+echo "$l" | xclip -sel clip -i 2> /dev/null
+echo "$l"
