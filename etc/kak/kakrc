@@ -1,3 +1,21 @@
-add-highlighter global/ number-lines
-set global tabstop 4
-set global indentwidth 4
+#######
+# STYLE
+#######
+	colorscheme improved-term
+
+	## HIGHLIHTERS
+		add-highlighter global/ number-lines -relative
+		add-highlighter global/ regex '\h*$' 0:red,red
+	## OPTIONS
+		set global aligntab true
+        set global indentwidth 0
+        set global tabstop 4
+
+        set global ui_options ncurses_assistant=cat
+
+#######
+# HOOKS
+#######
+	hook global WinCreate .* %{
+		set global ui_options ncurses_enable_mouse=false
+	}

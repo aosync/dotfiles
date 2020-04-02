@@ -92,53 +92,96 @@ st*borderpx: 14
 #define nord14 #A3BE8C
 #define nord15 #B48EAD
 
+! Sakura
+#define sbg	   #242124
+#define sfg    #eff7ff
+#define scc    #eff7ff
+#define s0     #201c20
+#define s8     #373037
+#define s1	   #b83c30
+#define s9     #b8544a
+#define s2     #4b9a54
+#define s10    #5aa862
+#define s3 	   #e8d75b
+#define s11    #e8db7d
+#define s4     #558c8c
+#define s12    #668c8c
+#define s5     #78184a
+#define s13    #822c51
+#define s6     #f88aa3
+#define s14    #f1a9b9
+#define s7     #a7abae
+#define s15    #eff7ff
 
 ! Set the global color here
 
-*background:  gb_bg
-*foreground:  gb_fg
-*cursorColor: gb_fg
-*color0:      gb_bg
-*color1:      gb_dark_red
-*color2:      gb_dark_green
-*color3:      gb_dark_yellow
-*color4:      gb_dark_blue
-*color5:      gb_dark_purple
-*color6:      gb_dark_aqua
-*color7:      gb_gray1
-*color8:      gb_gray2
-*color9:      gb_red
-*color10:     gb_green
-*color11:     gb_yellow
-*color12:     gb_blue
-*color13:     gb_purple
-*color14:     gb_aqua
-*color15:     gb_fg
+*background:  sbg
+*foreground:  sfg
+*cursorColor: scc
+*color0:      s0
+*color1:      s1
+*color2:      s2
+*color3:      s3
+*color4:      s4
+*color5:      s5
+*color6:      s6
+*color7:      s7
+*color8:      s8
+*color9:      s9
+*color10:     s10
+*color11:     s11
+*color12:     s12
+*color13:     s13
+*color14:     s14
+*color15:     s15
 
 
 ! Set st colors so they do not get changed with wal
 !
 ! Nord
 !
-st*background:  nord0 
-st*foreground:  nord4
-st*cursorColor: nord4
-st*color0:      nord1
-st*color1:      nord11
-st*color2:      nord14
-st*color3:      nord13
-st*color4:      nord9
-st*color5:      nord15
-st*color6:      nord8
-st*color7:      nord5
-st*color8:      nord3
-st*color9:      nord11
-st*color10:     nord14
-st*color11:     nord13
-st*color12:     nord9
-st*color13:     nord15
-st*color14:     nord7
-st*color15:     nord6
+!st*background:  nord0 
+!st*foreground:  nord4
+!st*cursorColor: nord4
+!st*color0:      nord1
+!st*color1:      nord11
+!st*color2:      nord14
+!st*color3:      nord13
+!st*color4:      nord9
+!st*color5:      nord15
+!st*color6:      nord8
+!st*color7:      nord5
+!st*color8:      nord3
+!st*color9:      nord11
+!st*color10:     nord14
+!st*color11:     nord13
+!st*color12:     nord9
+!st*color13:     nord15
+!st*color14:     nord7
+!st*color15:     nord6
+!
+! OR
+! Sakura
+!
+st*background:  sbg
+st*foreground:  sfg
+st*cursorColor: scc
+st*color0:      s0
+st*color1:      s1
+st*color2:      s2
+st*color3:      s3
+st*color4:      s4
+st*color5:      s5
+st*color6:      s6
+st*color7:      s7
+st*color8:      s8
+st*color9:      s9
+st*color10:     s10
+st*color11:     s11
+st*color12:     s12
+st*color13:     s13
+st*color14:     s14
+st*color15:     s15
 !
 ! OR
 !
