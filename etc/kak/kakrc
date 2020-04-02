@@ -1,7 +1,7 @@
 #######
 # STYLE
 #######
-	colorscheme nord
+	colorscheme improved-term
 
 	## HIGHLIHTERS
 		add-highlighter global/ number-lines -relative

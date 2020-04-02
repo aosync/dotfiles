@@ -1,6 +1,5 @@
-!.Xdefaults file
-!-----------------
-
+! .Xresources
+!------------
 
 ! Set transparancy
 *alpha: 0.96
