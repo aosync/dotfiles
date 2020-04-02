@@ -92,121 +92,53 @@ st*borderpx: 14
 #define nord14 #A3BE8C
 #define nord15 #B48EAD
 
-! Sakura
-#define sbg	   #242124
-#define sfg    #eff7ff
-#define scc    #eff7ff
-#define s0     #201c20
-#define s8     #373037
-#define s1	   #b83c30
-#define s9     #b8544a
-#define s2     #419f57
-#define s10    #62a869
-#define s3 	   #eede69
-#define s11    #e8dc82
-#define s4     #7d98c4
-#define s12    #9cabc4
-#define s5     #ff9abc
-#define s13    #f6b2c9
-#define s6     #b8dfe5
-#define s14    #c3e0e5
-#define s7     #a7abae
-#define s15    #eff7ff
-
-#define sofg      #c2c2b0
-#define sobg      #222222
-#define socc      #c2c2b0
-#define so0       #111111
-#define so8       #181818
-#define so1       #aa4450
-#define so9       #ff6a6a
-#define so2       #719611
-#define so10      #b1d631
-#define so3       #ff9800
-#define so11      #87875f
-#define so4       #6688aa
-#define so12      #90b0d1
-#define so5       #8f6f8f
-#define so13      #8181a6
-#define so6       #528b8b
-#define so14      #87ceeb
-#define so7       #d3d3d3
-#define so15      #c1cdc1
-#define soit      #719611
-#define sobd      #d3d3d3
-#define soul      #528b8b
-
 
 ! Set the global color here
 
-*background:  sobg
-*foreground:  sofg
-*cursorColor: socc
-*color0:      so0
-*color1:      so1
-*color2:      so2
-*color3:      so3
-*color4:      so4
-*color5:      so5
-*color6:      so6
-*color7:      so7
-*color8:      so8
-*color9:      so9
-*color10:     so10
-*color11:     so11
-*color12:     so12
-*color13:     so13
-*color14:     so14
-*color15:     so15
+*background:  gb_bg
+*foreground:  gb_fg
+*cursorColor: gb_fg
+*color0:      gb_bg
+*color1:      gb_dark_red
+*color2:      gb_dark_green
+*color3:      gb_dark_yellow
+*color4:      gb_dark_blue
+*color5:      gb_dark_purple
+*color6:      gb_dark_aqua
+*color7:      gb_gray1
+*color8:      gb_gray2
+*color9:      gb_red
+*color10:     gb_green
+*color11:     gb_yellow
+*color12:     gb_blue
+*color13:     gb_purple
+*color14:     gb_aqua
+*color15:     gb_fg
 
 
 ! Set st colors so they do not get changed with wal
 !
 ! Nord
 !
-!st*background:  nord0 
-!st*foreground:  nord4
-!st*cursorColor: nord4
-!st*color0:      nord1
-!st*color1:      nord11
-!st*color2:      nord14
-!st*color3:      nord13
-!st*color4:      nord9
-!st*color5:      nord15
-!st*color6:      nord8
-!st*color7:      nord5
-!st*color8:      nord3
-!st*color9:      nord11
-!st*color10:     nord14
-!st*color11:     nord13
-!st*color12:     nord9
-!st*color13:     nord15
-!st*color14:     nord7
-!st*color15:     nord6
-!
-! OR
-! Sakura
-!
-!st*background:  sbg
-!st*foreground:  sfg
-!st*cursorColor: scc
-!st*color0:      s0
-!st*color1:      s1
-!st*color2:      s2
-!st*color3:      s3
-!st*color4:      s4
-!st*color5:      s5
-!st*color6:      s6
-!st*color7:      s7
-!st*color8:      s8
-!st*color9:      s9
-!st*color10:     s10
-!st*color11:     s11
-!st*color12:     s12
-!st*color13:     s13
-!st*color14:     s14
-!st*color15:     s15
-!
+st*background:  nord0 
+st*foreground:  nord4
+st*cursorColor: nord4
+st*color0:      nord1
+st*color1:      nord11
+st*color2:      nord14
+st*color3:      nord13
+st*color4:      nord9
+st*color5:      nord15
+st*color6:      nord8
+st*color7:      nord5
+st*color8:      nord3
+st*color9:      nord11
+st*color10:     nord14
+st*color11:     nord13
+st*color12:     nord9
+st*color13:     nord15
+st*color14:     nord7
+st*color15:     nord6
 !
 ! OR
 !
@@ -231,28 +163,8 @@ st*borderpx: 14
 ! st*color13:     gb_purple
 ! st*color14:     gb_aqua
 ! st*color15:     gb_fg
-!
-! OR
-! sourcerer
-st*background:  sobg
-st*foreground:  sofg
-st*cursorColor: socc
-st*color0:      so0
-st*color1:      so1
-st*color2:      so2
-st*color3:      so3
-st*color4:      so4
-st*color5:      so5
-st*color6:      so6
-st*color7:      so7
-st*color8:      so8
-st*color9:      so9
-st*color10:     so10
-st*color11:     so11
-st*color12:     so12
-st*color13:     so13
-st*color14:     so14
-st*color15:     so15
+
+
 
 
 
