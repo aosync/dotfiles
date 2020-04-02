@@ -100,16 +100,16 @@ st*borderpx: 14
 #define s8     #373037
 #define s1	   #b83c30
 #define s9     #b8544a
-#define s2     #4b9a54
-#define s10    #5aa862
-#define s3 	   #e8d75b
-#define s11    #e8db7d
-#define s4     #558c8c
-#define s12    #668c8c
-#define s5     #78184a
-#define s13    #822c51
-#define s6     #f88aa3
-#define s14    #f1a9b9
+#define s2     #419f57
+#define s10    #62a869
+#define s3 	   #eede69
+#define s11    #e8dc82
+#define s4     #7d98c4
+#define s12    #9cabc4
+#define s5     #ff9abc
+#define s13    #f6b2c9
+#define s6     #b8dfe5
+#define s14    #c3e0e5
 #define s7     #a7abae
 #define s15    #eff7ff
 
