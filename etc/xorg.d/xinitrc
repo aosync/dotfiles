@@ -1,6 +1,6 @@
 #!/bin/sh
 
-userresources=$XDG_CONFIG_HOME/Xresources
+userresources=$XDG_CONFIG_HOME/xorg.d/Xresources
 sysresources=/etc/X11/xinit/.Xresources
 
 # merge in defaults and keymaps
@@ -22,7 +22,7 @@ pulseaudio -D
 
 redshift -t 6500:3900 & #
 
-wal -st -R
+xwallpaper --zoom "$(cat $WALL)"
 
 picom -b
 

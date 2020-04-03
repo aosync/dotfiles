@@ -2,14 +2,14 @@
 
 killall admiral
 
-admiral | lemonbar -g x22 -f "$(xrdb-get bspwm font)" -f "Font Awesome 5 Free:style=Solid:pixelsize=12:antialiasing=true:hinting=true" -a 15 -B $(xrdb-get bspwm color2) -F $(xrdb-get bspwm color1) | sh &
+admiral | lemonbar -g x22 -f "$(xrdb-get lemonbar font)" -f "Font Awesome 5 Free:style=Solid:pixelsize=12:antialiasing=true:hinting=true" -a 15 -B $(xrdb-get lemonbar background) -F $(xrdb-get lemonbar foreground) | sh &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config normal_border_color $(xrdb-get bspwm color8)
 bspc config focused_border_color $(xrdb-get bspwm color10)
 
-bspc config border_width 		2
+bspc config border_width 		0
 bspc config window_gap 			2
 
 bspc config split_ratio 		0.50
