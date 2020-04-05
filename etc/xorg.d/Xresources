@@ -1,22 +1,22 @@
-*alpha: 0.96
+#include "themes/cosmic_latte"
+
+*alpha: 1
 
 *font: cherry:style=Regular:pixelsize=11:antialias=false:autohint=false
 
+#define rofic black_normal, white_normal, blue__normal, cyan__normal, white_bright
 rofi*font: cherry 11
 rofi*lines: 4
 rofi*eh: 2
 rofi*width: 50
-rofi*padding: 50
+rofi*padding: 20
 rofi*color-enabled: true
-rofi*color-window: argb:ee273238, #273238, argb:3a1e2529
-rofi*color-normal: argb:00273238, #c1c1c1, argb:3a273238, #394249, #ffffff
-rofi*color-active: argb:00273238, #80cbc4, argb:3a273238, #394249, #80cbc4
-rofi*color-urgent: argb:00273238, #ff1844, argb:3a273238, #394249, #ff1844
-rofi*theme: var/cache/wal/colors-rofi-dark
+rofi*color-window: rofic
+rofi*color-normal: rofic
+rofi*color-active: rofic
+rofi*color-urgent: rofic
 
 betterlockscreen*font: Cantarell
-
-#include "themes/cosmic_latte"
 
 *background:  black_normal
 *foreground:  white_normal
@@ -39,7 +39,6 @@ betterlockscreen*font: Cantarell
 *color14:     cyan__bright
 *color15:     white_bright
 
-st*alpha: 1
 st*borderpx: 14
 
 st*background:  black_normal

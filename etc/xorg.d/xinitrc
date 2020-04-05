@@ -36,4 +36,4 @@ xss-lock /usr/bin/lockscreen &
 
 dunst &
 
-exec bspwm
+exec "$WM"

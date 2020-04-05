@@ -1,0 +1,5 @@
+#!/bin/sh
+d=$(date '+%H%M ')
+b=$(battery)
+
+notify-send "$d" "$b"

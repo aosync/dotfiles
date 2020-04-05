@@ -26,6 +26,7 @@ export BROWSER="firefox"
 export FILE="ranger"
 export TERMINAL="st"
 export READER="zathura"
+export WM="bspwm"
 
 export NODE_REPL_HISTORY=""
 

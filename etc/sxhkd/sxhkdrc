@@ -58,6 +58,10 @@ Print
 alt + Print
     maim -s -u --format=png /dev/stdout | xclip -selection clipboard -t image/png -i && notify-send -u low "Region screenshot done"
 
+# Infos about now
+super + o
+	statenotify
+
 # Volume
 XF86AudioLowerVolume
 	amixer sset 'Master' 2%-

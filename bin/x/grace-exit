@@ -1,0 +1,13 @@
+#/bin/sh
+
+killall firefox # gracefully exits firefox as it can corrupt otherwise
+
+b=$(basename "$WM")
+
+echo "$b"
+
+if [ "$b" = "bspwm" ]; then
+	bspc quit
+else
+	killall "$WM"
+fi

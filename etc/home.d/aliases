@@ -4,6 +4,7 @@ alias a=alias
 
 a ls='ls --color=auto -a --group-directories-first'
 a c='clear'
+a p='smartpath'
 
 a gall='git add -A'
 a gcm='git commit -m'
