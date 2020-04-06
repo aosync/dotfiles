@@ -1,9 +1,5 @@
 #!/bin/bash
 
-killall admiral
-
-admiral | lemonbar -g x22 -f "$(xrdb-get lemonbar font)" -f "Font Awesome 5 Free:style=Solid:pixelsize=12:antialiasing=true:hinting=true" -a 15 -B $(xrdb-get lemonbar background) -F $(xrdb-get lemonbar foreground) | sh &
-
 bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config normal_border_color $(xrdb-get bspwm color8)
@@ -24,5 +20,3 @@ bspc config focus_follows_pointer	false
 
 bspc rule -a St state=pseudo_tiled center=true rectangle=640x400+0+0
 bspc rule -a Zathura state=pseudo_tiled
-
-xdo above -t $(xdo id -n root) $(xdo id -n lemonbar)

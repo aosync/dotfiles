@@ -1,0 +1,39 @@
+#!/bin/sh
+
+script_name=$(basename $0)
+
+battery="/sys/class/power_supply/BAT*"
+interval=$1
+threshold=$2
+
+replace_other_processes() {
+	for pid in $(pidof -x ${script_name}); do
+		[ $pid != $$ ] && kill -9 $pid
+	done
+	return 0
+}
+
+deam() {
+	while true
+	do
+		bats=$(cat "$1/status")
+		batc=$(cat "$1/capacity")
+		if [ ${bats} = "Discharging" ] && [ ${batc} -le ${threshold} ]; then
+			notify-send -u critical "Battery $(basename $1) low" "${batc}%"
+		fi
+		sleep ${interval}
+	done &
+	echo "Daemon for battery $1 started"
+}
+
+[ $1 = "-s" ] && replace_other_processes && echo "Killed previous daemon" && exit 0
+
+case "$1$2" in
+	''|*[!0-9]*) echo "Interval and critical threshold must be numbers" && exit 1;;
+esac
+
+[ $(pidof -x ${script_name} | wc -w) -ge "3" ] && echo "The daemon is already running, execute ${script_name} -s to kill previous instances." && exit 1
+
+for b in $battery; do
+	deam $b
+done

@@ -36,4 +36,6 @@ xss-lock /usr/bin/lockscreen &
 
 dunst &
 
+lowbatteryd "$LOWBATTERYD_INTERVAL" "$BATTERY_CRITICAL"
+
 exec "$WM"
