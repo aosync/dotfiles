@@ -32,7 +32,7 @@ setxkbmap -layout us colemak
 sxhkd -m 1 &
 
 rm /tmp/lockp
-xss-lock /usr/bin/lockscreen &
+xss-lock $BIN/x/lockscreen &
 
 dunst &
 

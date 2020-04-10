@@ -44,7 +44,7 @@ super + shift + e
 
 # Lock screen
 super + shift + x
-	betterlockscreen -l
+	mightylock
 
 # Prevent lock screen on lid close
 super + shift + b

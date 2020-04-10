@@ -1,0 +1,11 @@
+#!/bin/sh
+
+lockp="/tmp/lockp"
+
+if ! pgrep -x "i3lock" > /dev/null
+then
+    state=$(cat "$lockp")
+    if [ ! -f "$lockp" ] || [ "$state" = 0 ]; then
+	mightylock
+    fi
+fi

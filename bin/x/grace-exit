@@ -9,5 +9,5 @@ echo "$b"
 if [ "$b" = "bspwm" ]; then
 	bspc quit
 else
-	killall "$WM"
+	killall "$b"
 fi
