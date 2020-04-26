@@ -39,8 +39,8 @@ bindkey -e
 
 autoload -U colors && colors
 # Set prompt
-# PS1='%{$fg[magenta]%}$(smartpath 2> /dev/null) $ '
-PS1='-> '
+PS1='%{$fg[magenta]%}$(smartpath 2> /dev/null) '
+# PS1='-> '
 
 # Syntax highlighting
 source "$XDG_DATA_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 2> /dev/null

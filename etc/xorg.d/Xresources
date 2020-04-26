@@ -1,11 +1,12 @@
 #include "themes/cosmic_latte"
 
-*alpha: 1
+*font: Cantarell:style=Regular:pixelsize=13:antialias=true:autohint=true
 
-*font: cherry:style=Regular:pixelsize=11:antialias=false:autohint=false
+st*font: ShureTechMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=false
+st*borderpx: 14
 
 #define rofic black_normal, white_normal, blue__normal, cyan__normal, white_bright
-rofi*font: cherry 11
+rofi*font: Cantarell 11
 rofi*lines: 4
 rofi*eh: 2
 rofi*width: 50
@@ -15,8 +16,11 @@ rofi*color-window: rofic
 rofi*color-normal: rofic
 rofi*color-active: rofic
 rofi*color-urgent: rofic
+rofi*theme: var/cache/wal/colors-rofi-dark
 
 betterlockscreen*font: Cantarell
+
+! cosmic_latte acts as a default scheme for everything but is overriden by wal
 
 *background:  black_normal
 *foreground:  white_normal
@@ -39,25 +43,4 @@ betterlockscreen*font: Cantarell
 *color14:     cyan__bright
 *color15:     white_bright
 
-st*borderpx: 14
 
-st*background:  black_normal
-st*foreground:  white_normal
-st*cursorColor: white_bright
-
-st*color0:      black_normal
-st*color1:      red___normal
-st*color2:      green_normal
-st*color3:      gold__normal
-st*color4:      blue__normal
-st*color5:      mgnta_normal
-st*color6:      cyan__normal
-st*color7:      white_normal
-st*color8:      black_bright
-st*color9:      red___bright
-st*color10:     green_bright
-st*color11:     gold__bright
-st*color12:     blue__bright
-st*color13:     mgnta_bright
-st*color14:     cyan__bright
-st*color15:     white_bright

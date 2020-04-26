@@ -28,6 +28,8 @@ export TERMINAL="st"
 export READER="zathura"
 export WM="bspwm"
 
+export TORRENTS_CSV="$OPT/torrents.csv/torrents.csv"
+
 export NODE_REPL_HISTORY=""
 
 export QT_QPA_PLATFORMTHEME=gtk2
@@ -46,3 +48,5 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/pythonrc"
 export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
 export CARGO_HOME="$OPT/cargo"
 export RUSTUP_HOME="$OPT/rustup"
+export NPM_CONFIG_USERCONFIG="$ETC/npmrc"
+export NPM_CONFIG_GLOBALCONFIG="/etc/npmrc"

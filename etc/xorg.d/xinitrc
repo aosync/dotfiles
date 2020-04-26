@@ -22,6 +22,7 @@ pulseaudio -D
 
 redshift -t 6500:3900 & #
 
+wal -st -n -R
 xwallpaper --zoom "$(cat $WALL)"
 
 picom -b

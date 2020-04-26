@@ -99,7 +99,7 @@ super + q
 	bspc node -c
 
 # Restart bspwm
-super + alt + r}
+super + alt + r
 	bspc wm -r
 
 # Switch between windows
