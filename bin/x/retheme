@@ -1,0 +1,5 @@
+#!/bin/sh
+
+spicetify apply && spicetify update
+
+# possibly recompile st and stuff

@@ -7,16 +7,17 @@ st*borderpx: 14
 
 #define rofic black_normal, white_normal, blue__normal, cyan__normal, white_bright
 rofi*font: Cantarell 11
-rofi*lines: 4
-rofi*eh: 2
-rofi*width: 50
-rofi*padding: 20
+rofi*lines: 6
+rofi*eh: 1
+rofi*width: 20
+rofi*padding: 30
+rofi*display-run: >>>
 rofi*color-enabled: true
 rofi*color-window: rofic
 rofi*color-normal: rofic
 rofi*color-active: rofic
 rofi*color-urgent: rofic
-rofi*theme: var/cache/wal/colors-rofi-dark
+rofi*theme: var/cache/wal/no-prompt-colors-rofi-dark
 
 betterlockscreen*font: Cantarell
 
@@ -42,5 +43,4 @@ betterlockscreen*font: Cantarell
 *color13:     mgnta_bright
 *color14:     cyan__bright
 *color15:     white_bright
-
 

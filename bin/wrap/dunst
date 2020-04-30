@@ -1,0 +1,12 @@
+#!/bin/sh
+
+color0="$(xrdb-get dunst color0)"
+
+/usr/bin/dunst \
+    -lb "${color0}" \
+    -nb "${color0}" \
+    -cb "${color0}" \
+    -lf "$(xrdb-get dunst color2)" \
+    -nf "$(xrdb-get dunst color7)" \
+    -cf "$(xrdb-get dunst color1)" \
+    $@

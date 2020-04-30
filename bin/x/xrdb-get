@@ -1,2 +1,2 @@
 #!/bin/sh
-xrdb -query | grep -E "(^\*\.?|$1[.*])$2" | tail -n1 | cut -f 2
+xrdb -query | grep -E "(^\*\.?|$1[.*])$2:" | tail -n1 | cut -f 2
