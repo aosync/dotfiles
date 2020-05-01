@@ -52,11 +52,11 @@ super + shift + b
 
 # Entire screen
 Print
-    maim -u --format=png /dev/stdout | xclip -selection clipboard -t image/png -i && notify-send -u low "Sreenshot done"
+    SCR="$SCREENSHOTS/$(date '+%F-%H%M%S%N').png" ; maim -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Sreenshot done" -i "$SCR"
 
 # Region screenshot
 alt + Print
-    maim -s -u --format=png /dev/stdout | xclip -selection clipboard -t image/png -i && notify-send -u low "Region screenshot done"
+    SCR="$SCREENSHOTS/$(date '+%F-%H%M%S%N').png" ; maim -s -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Region screenshot done" -i "$SCR"
 
 # Infos about now
 super + o

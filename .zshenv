@@ -19,6 +19,7 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 export WALL="$XDG_CACHE_HOME/wall"
 export WALL_BLURRED="$XDG_CACHE_HOME/wall_b.png"
+export SCREENSHOTS="$MED/screenshots"
 
 export EDITOR="kak"
 export VISUAL="kak"
