@@ -29,6 +29,8 @@ export TERMINAL="st"
 export READER="zathura"
 export WM="bspwm"
 
+export TRASH="$VAR/trash"
+
 export TORRENTS_CSV="$OPT/torrents.csv/torrents.csv"
 
 export NODE_REPL_HISTORY=""

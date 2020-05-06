@@ -1,5 +1,6 @@
 #!/bin/sh
-d=$(date '+%H%M ')
+date=$(date '+%H%M')
+day=$(date '+%A %d%m')
 b=$(battery)
 
-notify-send "$d" "$b"
+notify-send "$date" "$day\n$b"

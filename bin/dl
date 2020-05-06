@@ -1,0 +1,9 @@
+#!/bin/sh
+
+td="$TRASH"
+
+case " $* " in
+	*\ -[fr]*\ *) rm -rf "$@"; exit;;
+esac
+
+mv --backup=t "$@" "$td"

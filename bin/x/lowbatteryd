@@ -16,8 +16,8 @@ replace_other_processes() {
 deam() {
 	while true
 	do
-		bats=$(cat "$1/status")
-		batc=$(cat "$1/capacity")
+		read -r bats < "$1/status"
+		read -r batc < "$1/capacity"
 		if [ ${bats} = "Discharging" ] && [ ${batc} -le ${threshold} ]; then
 			notify-send -u critical "Battery $(basename $1) low" "${batc}%"
 		fi

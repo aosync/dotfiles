@@ -24,19 +24,19 @@ super + r
 
 # Start firefox
 super + shift + f
-    firefox
+    $BROWSER
 
 # Start google keep
 super + shift + k
-    firefox https://keep.google.com
+    $BROWSER https://keep.google.com
 
 # Start google calendar
 super + shift + c
-    firefox https://calendar.google.com
+    $BROWSER https://calendar.google.com
 
 # Start gmail
 super + shift + g
-    firefox https://mail.google.com
+    $BROWSER https://mail.google.com
 
 # Open emoji menu
 super + shift + e
