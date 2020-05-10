@@ -7,9 +7,9 @@ if {~ $#_PROFILE_RUN 0} {
 }
 
 fn alias name f {
-	let (cmd=$f(1))
+	let (cmd = $f(1))
 	catch @ e {
-		echo 'Non-existant program' ; return 1
+		echo 'Non-existent program' ; return 1
 	} {
 		let (real_path = <={%whatis $cmd})
 		f = $real_path $f(2 ...)

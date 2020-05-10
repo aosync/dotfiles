@@ -3,6 +3,7 @@
 alias a alias
 
 a ls (ls '--color=auto' -a --group-directories-first)
+a ll (ls -l)
 a c clear
 a p smartpath
 

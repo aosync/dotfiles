@@ -1,7 +1,7 @@
-#!/usr/bin/env es
+#!/usr/bin/env -S es --
 
 let (scr=$SCREENSHOTS/`{date '+%F-%H%M%S%N'}^.png; s = (); t = S) {
-	if {~ $1 r} {
+	if {~ $1 -r} {
 		s = -s
 		t = 'Region s'
 	}

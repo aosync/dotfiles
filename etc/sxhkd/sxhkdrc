@@ -56,7 +56,7 @@ Print
 
 # Region screenshot
 alt + Print
-	screensh r
+	screensh -r
 
 # Infos about now
 super + o
