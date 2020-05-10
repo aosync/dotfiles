@@ -16,7 +16,7 @@ super + d
 
 # Rofi computer
 super + g
-	bash rofi-computer
+	bash -c rofi-computer
 
 # Ranger
 super + r
@@ -52,11 +52,11 @@ super + shift + b
 
 # Entire screen
 Print
-    SCR="$SCREENSHOTS/$(date '+%F-%H%M%S%N').png" ; maim -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Sreenshot done" -i "$SCR"
+    sh -c 'SCR="$SCREENSHOTS/$(date ''+%F-%H%M%S%N'').png" ; maim -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Sreenshot done" -i "$SCR"'
 
 # Region screenshot
 alt + Print
-    SCR="$SCREENSHOTS/$(date '+%F-%H%M%S%N').png" ; maim -s -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Region screenshot done" -i "$SCR"
+    sh -c 'SCR="$SCREENSHOTS/$(date ''+%F-%H%M%S%N'').png" ; maim -s -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Region screenshot done" -i "$SCR"'
 
 # Infos about now
 super + o
@@ -81,10 +81,10 @@ XF86MonBrightnessUp
 
 # Bluetooth
 shift + XF86Tools
-    sudo bluetoothctl power off && dunstify -u low "Bluetooth: off"
+    sudo bluetoothctl power off && dunstify -u low 'Bluetooth: off'
 
 XF86Tools
-    sudo bluetoothctl power on && dunstify -u low "Bluetooth: on"
+    sudo bluetoothctl power on && dunstify -u low 'Bluetooth: on'
 
 XF86Search
     st sudo bluetoothctl

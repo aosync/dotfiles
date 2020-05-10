@@ -39,7 +39,7 @@ bindkey -e
 
 autoload -U colors && colors
 # Set prompt
-PS1='%{$fg[magenta]%}$(smartpath 2> /dev/null) '
+PS1='%{$fg[magenta]%}$(smartpath 2> /dev/null)%{$reset_color%} '
 # PS1='-> '
 
 # Syntax highlighting

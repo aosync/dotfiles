@@ -37,6 +37,7 @@ xss-lock $BIN/x/lockscreen &
 
 dunst &
 
+sleep 0.4
 lowbatteryd "$LOWBATTERYD_INTERVAL" "$BATTERY_CRITICAL"
 
 exec "$WM"

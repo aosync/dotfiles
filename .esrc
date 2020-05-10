@@ -1,0 +1,31 @@
+#!/bin/es
+
+profile_path = $home/etc/home.d/profile
+
+if {~ $#_PROFILE_RUN 0} {
+	echo 'Profile not run, running profile'
+	exec sh -c '. $profile_path ; es -l'
+} {
+	echo 'Now, profile is run.'
+}
+
+fn alias name f {
+	let (cmd=$f(1))
+	catch @ e {
+		echo 'Non-existant program' ; return 1
+	} {
+		let (real_path = <={%whatis $cmd})
+		f = $real_path $f(2 ...)
+	}
+	fn-$name = @ { $f $* }
+	return 0
+}
+alias a alias
+
+. $XDG_CONFIG_HOME/home.d/aliases.es
+
+fn %prompt {
+	prompt = \e'[0;35m'^<={%flatten ' ' `{p}}^\e'[0;315m'^' ' '> '
+}
+
+if {{~ $TERM linux} && {~ `{tty} /dev/tty1}} { startx $XDG_CONFIG_HOME/xorg.d/xinitrc }

@@ -3,7 +3,6 @@
 alias a=alias
 
 a ls='ls --color=auto -a --group-directories-first'
-a rm='dl'
 a c='clear'
 a p='smartpath'
 
@@ -28,4 +27,4 @@ a please='sudo $(fc -ln -1)'
 
 a nctl='sudo netctl'
 
-source "$XDG_CONFIG_HOME/home.d/landmarks"
+. "$XDG_CONFIG_HOME/home.d/landmarks"
