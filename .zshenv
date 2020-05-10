@@ -1,1 +1,0 @@
-/home/aho/etc/home.d/profile
