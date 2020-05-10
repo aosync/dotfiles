@@ -3,10 +3,7 @@
 profile_path = $home/etc/home.d/profile
 
 if {~ $#_PROFILE_RUN 0} {
-	echo 'Profile not run, running profile'
 	exec sh -c '. $profile_path ; es -l'
-} {
-	echo 'Now, profile is run.'
 }
 
 fn alias name f {
