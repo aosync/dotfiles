@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env es
 
 {
 	t = <={%read}

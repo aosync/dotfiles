@@ -1,4 +1,4 @@
-#!/bin/es
+#!/usr/bin/env es
 
 profile_path = $home/etc/home.d/profile
 
