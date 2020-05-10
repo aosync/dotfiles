@@ -16,7 +16,7 @@ super + d
 
 # Rofi computer
 super + g
-	bash -c rofi-computer
+	rofi-computer
 
 # Ranger
 super + r
@@ -52,11 +52,11 @@ super + shift + b
 
 # Entire screen
 Print
-    sh -c 'SCR="$SCREENSHOTS/$(date ''+%F-%H%M%S%N'').png" ; maim -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Sreenshot done" -i "$SCR"'
+	screensh
 
 # Region screenshot
 alt + Print
-    sh -c 'SCR="$SCREENSHOTS/$(date ''+%F-%H%M%S%N'').png" ; maim -s -u --format=png /dev/stdout | tee "$SCR" | xclip -selection clipboard -t image/png -i && notify-send -u low "Region screenshot done" -i "$SCR"'
+	screensh r
 
 # Infos about now
 super + o

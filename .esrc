@@ -17,7 +17,8 @@ fn alias name f {
 	fn-$name = @ { $f $* }
 	return 0
 }
-alias a alias
+
+fn ma { expr ( $* ) }
 
 . $XDG_CONFIG_HOME/home.d/aliases.es
 

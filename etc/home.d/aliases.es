@@ -1,5 +1,7 @@
 #!/bin/sh
 
+alias a alias
+
 a ls (ls '--color=auto' -a --group-directories-first)
 a c clear
 a p smartpath
