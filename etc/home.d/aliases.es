@@ -1,4 +1,4 @@
-#!/usr/bin/env es
+#!/usr/bin/es
 
 alias a alias
 

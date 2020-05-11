@@ -1,4 +1,4 @@
-#!/usr/bin/env -S es --
+#!/usr/bin/es --
 
 let (scr=$SCREENSHOTS/`{date '+%F-%H%M%S%N'}^.png; s = (); t = S) {
 	if {~ $1 -r} {

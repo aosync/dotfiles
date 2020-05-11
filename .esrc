@@ -1,4 +1,4 @@
-#!/usr/bin/env es
+#!/usr/bin/es
 
 profile_path = $home/etc/home.d/profile
 
@@ -23,7 +23,7 @@ fn ma { expr ( $* ) }
 . $XDG_CONFIG_HOME/home.d/aliases.es
 
 fn %prompt {
-	prompt = \e'[0;35m'^<={%flatten ' ' `{p}}^\e'[0;315m ' '> '
+	prompt = \e'[0;35m'^<={%flatten ' ' `smartpath}^\e'[0;315m ' '> '
 }
 
-if {{~ $TERM linux} && {~ `{tty} /dev/tty1}} { startx $XDG_CONFIG_HOME/xorg.d/xinitrc ; exit 0 }
+if {{~ $TERM linux} && {~ `tty /dev/tty1}} { startx $XDG_CONFIG_HOME/xorg.d/xinitrc ; exit 0 }

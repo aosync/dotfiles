@@ -1,4 +1,4 @@
-#!/usr/bin/env es
+#!/usr/bin/es
 
 {
 	t = <={%read}
@@ -20,5 +20,8 @@ D $HOME/med/doc
 d $HOME/usr/doc
 M $HOME/med
 w $HOME/bin/wrap
+x $HOME/bin/x
+X $HOME/etc/xorg.d
+h $HOME/etc/home.d
 m /mnt
 eof-marker

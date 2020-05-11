@@ -1,0 +1,14 @@
+#!/usr/bin/es --
+
+if {! ~ $#1 0} {walls = $1} {walls = $MED/wall}
+
+images = $walls/*.jpg $walls/*.png
+
+for (i = $images) {
+	sxiv $i &
+	r = <={%read}
+	killall sxiv
+	if {~ $r rem} {rm $i ; continue}
+	[ -d $walls/$r ] || mkdir $walls/$r
+	mv $i $walls/$r/
+}
