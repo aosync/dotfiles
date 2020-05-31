@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xinit "${XDG_CONFIG_HOME:-~/.config}/xorg.d/xinitrc" $@ -- /usr/bin/X vt1 -keeptty

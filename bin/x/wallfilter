@@ -2,13 +2,14 @@
 
 if {! ~ $#1 0} {walls = $1} {walls = $MED/wall}
 
-images = $walls/*.jpg $walls/*.png
+images = `{find $walls -maxdepth 1 -type f}
 
 for (i = $images) {
-	sxiv $i &
+	sxiv $^i &
 	r = <={%read}
-	killall sxiv
-	if {~ $r rem} {rm $i ; continue}
-	[ -d $walls/$r ] || mkdir $walls/$r
-	mv $i $walls/$r/
+	kill $apid ; sleep 0.4
+	if {~ $r rem} {rm $^i} {
+		[ -d $walls/$r ] || mkdir $walls/$r
+		mv `{basename $^i} $walls/$r/
+	}
 }

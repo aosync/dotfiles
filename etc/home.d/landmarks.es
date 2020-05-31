@@ -1,12 +1,13 @@
 #!/usr/bin/es
 
 {
-	t = <={%read}
+	let (t = <={%read})
 	while {! ~ $#t 0} {
-		line = <={%fsplit ' ' $t}
-		dest = $line(2 ...)
-		a g^$line(1) (cd $^dest)
-		t = <={%read}
+		let (line = <={%fsplit ' ' $t}) {
+			let(dest = $line(2 ...))
+			a g$line(1) (cd $^dest)
+			t = <={%read}
+		}
 	}
 } << eof-marker
 H $HOME

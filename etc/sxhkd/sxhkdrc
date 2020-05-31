@@ -22,7 +22,7 @@ super + g
 super + r
 	st ranger
 
-# Start firefox
+# Start the browser
 super + shift + f
     $BROWSER
 
@@ -37,6 +37,10 @@ super + shift + c
 # Start gmail
 super + shift + g
     $BROWSER https://mail.google.com
+
+# Start github
+super + shift + j
+	$BROWSER https://github.com
 
 # Open emoji menu
 super + shift + e
@@ -103,7 +107,7 @@ super + alt + r
 	bspc wm -r
 
 # Switch between windows
-super + {comma,semicolon}
+super + {comma,period}
 	bspc node -f {next,prev}.local
 
 # Change node flag
@@ -111,11 +115,15 @@ super + {t,shift + t, s, f}
 	bspc node -f -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # Change desktop
-super + {_,shift + }{1,2,3,4,5,6,7,8,9,0}
+super + {_,shift +}{1,2,3,4,5,6,7,8,9,0}
 	bspc {desktop -f,node -f -d} {I,II,III,IV,V,VI,VII,VIII,IX,X}
 
+# Change desktop and switch to it
+super + shift + control + {1,2,3,4,5,6,7,8,9,0}
+	let (work = {I,II,III,IV,V,VI,VII,VIII,IX,X}) \{ bspc node -f -d $work --follow ; bspc desktop -f $work \}
+
 # Change window
-super + {_,shift+}{h,j,k,l}
+super + {_,shift + control+}{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
 # Expand size
@@ -127,5 +135,5 @@ super + alt + shift + {h,j,k,l}
 	bspc node -f -z {left 20 0,bottom 0 -20,top 0 20,right -20 0}
 
 # Move a floating window
-super control + {h,j,k,l}
+super + control + {h,j,k,l}
 	bspc node -f -v {-20 0,0 20,0 -20,20 0}

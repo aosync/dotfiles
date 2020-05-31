@@ -20,3 +20,9 @@ bspc config focus_follows_pointer	false
 
 bspc rule -a St state=pseudo_tiled center=true rectangle=1500x875+0+0
 bspc rule -a Zathura state=floating rectangle=700x1000+0+0 center=true
+
+##########
+# Metadata
+##########
+
+# xprop -id 0x1000000 -notype -f _NET_WM_NAME 8s -set _NET_WM_NAME "bsp"
