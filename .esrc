@@ -1,29 +1,32 @@
 #!/usr/bin/es
 
-profile_path = $home/etc/home.d/profile
-
-if {~ $#_PROFILE_RUN 0} {
-	exec sh -c '. $profile_path ; es -l'
+if {~ $#_PROFILE_RUN 0}{
+	. $home/etc/home.d/profile
 }
 
-fn alias name f {
-	let (cmd = $f(1))
+history=$VAR/history
+
+fn alias name f{
+	let(cmd=$f(1))
 	catch @ e {
 		echo 'Non-existent program' ; return 1
-	} {
-		let (real_path = <={%whatis $cmd})
-		f = $real_path $f(2 ...)
+	}{
+		let(real_path=<={%whatis $cmd}) f=$real_path $f(2 ...)
 	}
-	fn-$name = @ { $f $* }
+	fn-$name=@ { $f $* }
 	return 0
 }
 
-fn ma { expr ( $* ) }
+fn ma{ expr ( $* ) }
 
-. $XDG_CONFIG_HOME/home.d/aliases.es
+fn pw { pwd }
 
-fn %prompt {
-	prompt = \e'[0;35m'`^smartpath^\e'[0;315m ' '> '
-}
+. $XDG_CONFIG_HOME/home.d/aliases
+
+prompt='-> ' '	'
+
+#fn %prompt{
+	#prompt=\e'[0;35m'`^smartpath^\e'[0;315m ' '	'
+#}
 
 if {{~ $TERM linux} && {~ `tty /dev/tty1}} { startx $XDG_CONFIG_HOME/xorg.d/xinitrc ; exit 0 }

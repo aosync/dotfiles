@@ -1,0 +1,12 @@
+#!/bin/sh
+
+wid="$1"
+
+g="$(wattr whxy $wid)"
+
+s="${g% * *}"
+p="${g#* * }"
+
+echo "$s" > "$WMDIR/win/$wid/s"
+echo "$p" > "$WMDIR/win/$wid/p"
+

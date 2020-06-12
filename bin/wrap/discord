@@ -1,3 +1,5 @@
 #!/bin/sh
 
-HOME="$XDG_DATA_HOME" /usr/bin/discord $@
+firefox https://discord.com/app
+
+#HOME="$XDG_DATA_HOME" /usr/bin/discord $@

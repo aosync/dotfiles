@@ -1,0 +1,13 @@
+#!/bin/sh
+
+wid="$1"
+ws="$2"
+
+read -r cur < "$WMDIR/win/$wid/ws"
+
+[ "$ws" = "$cur" ] && exit
+mv "$WMDIR/$cur/$wid" "$WMDIR/$ws/$wid"
+echo "$ws" > "$WMDIR/win/$wid/ws"
+
+read -r cws < "$WMDIR/cws"
+[ ! "$ws" = "$cws" ] && mapw -u "$wid" || mapw -m "$wid"

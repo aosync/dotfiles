@@ -1,0 +1,13 @@
+#!/bin/sh
+
+eval "$(crud)" || exit 1
+
+b=$(xrdb-get st borderpx)
+
+echo $b
+w=$(( (W - (b * 2)) / 10 ))
+h=$(( (H - (b * 2)) / 20 ))
+
+echo $w $h
+
+st -g "${w}x$h+$X+$Y"

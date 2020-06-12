@@ -1,58 +1,63 @@
-#!/usr/bin/sh
+#!/usr/bin/es
 #
 # profile file
 #
 
-. $HOME/etc/home.d/dirs
+. $home/etc/home.d/dirs
 
-export XDG_CACHE_HOME="$VAR/cache"
-export XDG_CONFIG_HOME="$ETC"
-export XDG_DATA_HOME="$USR/local/share"
+XDG_CACHE_HOME=$VAR/cache
+XDG_CONFIG_HOME=$ETC
+XDG_DATA_HOME=$USR/local/share
 
-export PATH="$BIN/x:$PATH"
-export PATH="$BIN/wm:$PATH"
-export PATH="$BIN/wrap:$PATH"
-export PATH="$BIN:$PATH"
-export PATH="$PATH:$OPT/cargo/bin"
-export PATH="$PATH:$OPT/deno/bin"
+path=/usr/lib/ccache/bin $path
+path=$BIN/x $path
+path=$BIN/wm $path
+path=$BIN/wrap $path
+path=$BIN $path
 
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+path=$path $OPT/cargo/bin
+path=$path $OPT/deno/bin
 
-export WALL="$XDG_CACHE_HOME/wall"
-export WALL_BLURRED="$XDG_CACHE_HOME/wall_b.png"
-export SCREENSHOTS="$MED/screenshots"
+ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
-export EDITOR="kak"
-export VISUAL="kak"
-export BROWSER="chromium"
-export FILE="ranger"
-export TERMINAL="st"
-export READER="zathura"
-export WM="bspwm"
+WALL=$XDG_CACHE_HOME/wall
+WALL_BLURRED=$XDG_CACHE_HOME/wall_b.png
+SCREENSHOTS=$MED/screenshots
 
-export TORRENTS_CSV="$OPT/torrents.csv/torrents.csv"
+EDITOR=nvim
+VISUAL=nvim
+BROWSER=firefox
+FILE=ranger
+TERMINAL=st
+READER=zathura
+WM=bspwm
+WMDIR=/dev/shm/wfs
 
-export NODE_REPL_HISTORY=""
+CCACHE_DIR=$VAR/cache/ccache
 
-export QT_QPA_PLATFORMTHEME=gtk2
+TORRENTS_CSV=$OPT/torrents.csv/torrents.csv
 
-export BATTERY_CRITICAL="20"
-export LOWBATTERYD_INTERVAL="120"
+NODE_REPL_HISTORY=''
+
+QT_QPA_PLATFORMTHEME=gtk2
+
+BATTERY_CRITICAL=20
+LOWBATTERYD_INTERVAL=120
 
 ########################
 # Paths for decluttering
 ########################
 
-export PULSE_COOKIE="$XDG_CACHE_HOME/pulse/cookie"
-export LESSHISTFILE="-"
-export GOPATH="$OPT/go"
-export PYTHONSTARTUP="$XDG_CONFIG_HOME/pythonrc"
-export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
-export CARGO_HOME="$OPT/cargo"
-export RUSTUP_HOME="$OPT/rustup"
-export DENO_INSTALL="$OPT/deno"
-export NPM_CONFIG_USERCONFIG="$ETC/npmrc"
-export NPM_CONFIG_GLOBALCONFIG="/etc/npmrc"
+PULSE_COOKIE=$XDG_CACHE_HOME/pulse/cookie
+LESSHISTFILE=-
+GOPATH=$OPT/go
+PYTHONSTARTUP=$XDG_CONFIG_HOME/pythonrc
+XAUTHORITY=$XDG_CACHE_HOME/Xauthority
+CARGO_HOME=$OPT/cargo
+RUSTUP_HOME=$OPT/rustup
+DENO_INSTALL=$OPT/deno
+NPM_CONFIG_USERCONFIG=$ETC/npmrc
+NPM_CONFIG_GLOBALCONFIG=/etc/npmrc
 
 # Profile has been run
-export _PROFILE_RUN='yes'
+_PROFILE_RUN=yes

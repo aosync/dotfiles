@@ -40,4 +40,12 @@ dunst &
 sleep 0.4
 lowbatteryd "$LOWBATTERYD_INTERVAL" "$BATTERY_CRITICAL"
 
+#mkdir -p $HOME/fs
 exec "$WM"
+#initwm
+#exec evd
+
+#x11fs "$HOME/fs"
+#bash -c 'sleep infinity'
+#fusermount -u "$HOME/fs"
+

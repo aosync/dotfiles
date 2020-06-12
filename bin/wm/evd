@@ -1,0 +1,25 @@
+#!/bin/sh
+
+wew | while read -r ev; do
+
+# Check if the event is not a resent
+[ "$ev" = "$p" ] && continue
+p="$ev"
+
+evt="${ev%	*}"
+evw="${ev#*	}"
+
+case $evt in
+	CREATE)
+		mgw "$evw"
+		;;
+	ENTER)
+		echo "Entered window $evw"
+		wtf "$evw"
+		;;
+	DESTROY)
+		umgw "$evw"
+		;;
+esac
+
+done

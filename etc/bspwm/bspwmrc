@@ -12,7 +12,7 @@ bspc config split_ratio 		0.50
 bspc config borderless_monocle		true
 bspc config gapless_monocle		true
 bspc config single_monocle 		true
-bspc config focus_follows_pointer	false
+bspc config focus_follows_pointer	true
 
 #######
 # Rules
@@ -25,4 +25,5 @@ bspc rule -a Zathura state=floating rectangle=700x1000+0+0 center=true
 # Metadata
 ##########
 
+# atomx _NEW_WM_NAME=bsp 0x01000000
 # xprop -id 0x1000000 -notype -f _NET_WM_NAME 8s -set _NET_WM_NAME "bsp"

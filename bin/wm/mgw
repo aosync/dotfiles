@@ -1,0 +1,29 @@
+#!/bin/sh
+
+[ -z "$1" ] && exit 1
+
+wid="$1"
+
+read -r cws < "$WMDIR/cws"
+mkdir "$WMDIR/win/$wid"
+ln -sf "$WMDIR/win/$wid" "$WMDIR/$cws/$wid"
+echo "$cws" > "$WMDIR/win/$wid/ws"
+
+
+# Handle the define size through window drawing
+cls="$(atomx WM_CLASS $wid)"
+
+# Further window rules should be defined here
+case $cls in
+	st)
+		wrs 500 380 "$wid"
+		mwc "$wid"
+		;;
+	*)
+		echo "$cls"
+		wrs 1920 1080 "$wid"
+		mwc "$wid"	
+		;;
+esac
+
+uwc $wid
