@@ -1,12 +1,18 @@
 #!/bin/sh
 
-color0="$(xrdb-get dunst color0)"
+white="$(xrdb-get dunst background)"
+black="$(xrdb-get dunst foreground)"
+sep="$(xrdb-get dunst color6)"
 
 /usr/bin/dunst \
-    -lb "${color0}" \
-    -nb "${color0}" \
-    -cb "${color0}" \
-    -lf "$(xrdb-get dunst color2)" \
-    -nf "$(xrdb-get dunst color15)" \
-    -cf "$(xrdb-get dunst color1)" \
+    -lb "${white}" \
+    -nb "${white}" \
+    -cb "${white}" \
+    -lf "${black}" \
+    -nf "${black}" \
+    -cf "${black}" \
+	-sep_color "${sep}" \
+	-frame_color "${sep}" \
+	-font "Cantarell 13" \
+	-frame_width "4" \
     $@

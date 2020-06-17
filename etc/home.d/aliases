@@ -5,7 +5,7 @@ alias a alias
 a doas (doas --)
 a sudo doas
 
-a ls (ls --color\=auto -a --group-directories-first)
+a ls (ls -a --group-directories-first)
 a ll (ls -l)
 a rr (rm -R)
 a c clear
