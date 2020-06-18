@@ -30,6 +30,8 @@ a dv sv
 
 fn-weather = @ loc { [ -z $loc ] && loc = '?m' ; curl 'https://wttr.in/'$loc }
 
+fn-toclip = @ { cat $1 | xclip -sel clip -i }
+
 a nctl (doas netctl)
 
 a neofetch (neofetch --disable gpu theme icons resolution kernel --colors 3 2 15 3 15 15 --ascii ~/med/ascii_art/att --ascii_colors 6 7 15)

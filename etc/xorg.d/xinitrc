@@ -24,7 +24,7 @@ redshift -t 6500:3900 & #
 
 wal -st -n -R
 # xwallpaper --zoom "$(cat $WALL)"
-xsetroot -grey
+xsetroot -solid "$(xrdb-get bspwm color7)"
 
 # picom -b
 
