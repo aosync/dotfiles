@@ -44,7 +44,7 @@ super + shift + j
 
 # Open emoji menu
 super + shift + e
-    emojis
+    	emojis
 
 # Lock screen
 super + shift + x
@@ -52,7 +52,7 @@ super + shift + x
 
 # Prevent lock screen on lid close
 super + shift + b
-    lockpreventswitch
+	lockpreventswitch
 
 # Entire screen
 Print

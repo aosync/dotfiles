@@ -18,23 +18,21 @@ export LANG=en_US.UTF-8
 
 [ -f "$HOME/.profile" ] && . "$HOME/.profile"
 
-pulseaudio -D
+# redshift -t 6500:3900 & #
 
-redshift -t 6500:3900 & #
+# wal -st -n -R
+xwallpaper --zoom "$(cat $WALL)"
+# xsetroot -solid "$(xrdb-get bspwm color7)"
 
-wal -st -n -R
-# xwallpaper --zoom "$(cat $WALL)"
-xsetroot -solid "$(xrdb-get bspwm color7)"
-
-# picom -b
+picom -b --config "$XDG_CONFIG_HOME/picom/picom.conf"
 
 xsetroot -cursor_name left_ptr
 
 setxkbmap -layout us colemak
 sxhkd -m 1 &
 
-rm /tmp/lockp
-xss-lock $BIN/x/lockscreen &
+#rm /tmp/lockp
+#xss-lock $BIN/x/lockscreen &
 
 dunst &
 

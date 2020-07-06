@@ -3,7 +3,7 @@
 *font: Cantarell:style=Regular:pixelsize=13:antialias=true:autohint=true
 
 !st*font: JetBrainsMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=false
-! st*font: ShureTechMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=false
+!st*font: ShureTechMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=false
 st*borderpx: 8
 st*font: cherry:style=Bold:pixelsize=13:antialias=false:autohint=true
 
@@ -19,7 +19,7 @@ rofi*color-window: rofic
 rofi*color-normal: rofic
 rofi*color-active: rofic
 rofi*color-urgent: rofic
-rofi*theme: var/cache/wal/no-prompt-colors-rofi-dark
+!rofi*theme: var/cache/wal/no-prompt-colors-rofi-dark
 
 betterlockscreen*font: Cantarell
 

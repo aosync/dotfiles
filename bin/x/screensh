@@ -1,9 +1,12 @@
-#!/usr/bin/es --
+#!/bin/sh
 
-let (scr=$SCREENSHOTS/`{date '+%F-%H%M%S%N'}^.png; s = (); t = S) {
-	if {~ $1 -r} {
-		s = -s
-		t = 'Region s'
-	}
-	maim $s -u '--format=png' /dev/stdout | tee $scr | xclip -sel clip -t image/png && notify-send -u low $t^'creenshot done' -i $scr
-}
+scr="$SCREENSHOTS/$(date '+%F-%H%M%S%N').png"
+s=""
+t="S"
+
+if [ "$1" = '-r' ]; then
+	s="-s"
+	t="Region s"
+fi
+
+maim $s -u --format=png /dev/stdout | tee "$scr" | xclip -sel clip -t image/png && notify-send -u low $t"creenshot done" -i "$scr"

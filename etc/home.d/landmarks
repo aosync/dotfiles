@@ -1,15 +1,8 @@
-#!/usr/bin/es
+#!/bin/sh
 
-{
-	let (t = <={%read})
-	while {! ~ $#t 0} {
-		let (line = <={%fsplit ' ' $t}) {
-			let(dest = $line(2 ...))
-			a g$line(1) (cd $^dest)
-			t = <={%read}
-		}
-	}
-} << eof-marker
+while read -r lbl dest; do
+	a "g$lbl"="cd $dest"
+done <<EOF
 H $HOME
 B $HOME/bin
 E $HOME/etc
@@ -24,5 +17,5 @@ w $HOME/bin/wrap
 x $HOME/bin/x
 X $HOME/etc/xorg.d
 h $HOME/etc/home.d
-m /mnt
-eof-marker
+mn /mnt
+EOF

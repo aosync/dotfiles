@@ -1,40 +1,38 @@
-#!/usr/bin/es
+#!/bin/sh
 
-alias a alias
+alias a=alias
 
-a doas (doas --)
-a sudo doas
+a doas="doas --"
 
-a ls (ls -a --group-directories-first)
-a ll (ls -l)
-a rr (rm -R)
-a c clear
-a wd smartpath
+a ls="ls -a --group-directories-first --color"
+a ll="ls -l"
+a rr="rm -R"
+a c=clear
+a wd=smartpath
 
-a p echo
+a p=echo
 
-a gall (git add -A)
-a gcm (git commit -m)
-a gs (git status)
-a dotfiles (git --git-dir\=$VAR/dots --work-tree\=$HOME)
+a gall="git add -A"
+a gcm="git commit -m"
+a gs="git status"
+a dotfiles="git --git-dir=$VAR/dots --work-tree=$HOME"
 
-a r ranger
+a r=ranger
 
-a k nvim
-a sk (doas nvim)
-a dk sk
+a v=nvim
+a dv="doas nvim"
 
-a v nvim
-a sv (doas nvim)
-a dv sv
+weather() {
+	loc="$1"
+	[ -z "$loc" ] && loc='?m' ; curl "https://wttr.in/$loc"
+}
 
-fn-weather = @ loc { [ -z $loc ] && loc = '?m' ; curl 'https://wttr.in/'$loc }
+toclip() {
+	cat "$1" | xclip -sel clip -i
+}
 
-fn-toclip = @ { cat $1 | xclip -sel clip -i }
+a fetch=neofetch
 
-a nctl (doas netctl)
+a pkg="doas pkg"
 
-a neofetch (neofetch --disable gpu theme icons resolution kernel --colors 3 2 15 3 15 15 --ascii ~/med/ascii_art/att --ascii_colors 6 7 15)
-a fetch neofetch
-
-. $XDG_CONFIG_HOME/home.d/landmarks
+. "$XDG_CONFIG_HOME/home.d/landmarks"

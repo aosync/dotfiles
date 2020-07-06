@@ -7,14 +7,14 @@ sleep 1;
 
 if [ "$DIALOG_RESULT" = "exit wm" ];
 then
-    grace-exit
+    	grace-exit
 elif [ "$DIALOG_RESULT" = "suspend" ];
 then
-    exec systemctl suspend
+    	doas zzz
 elif [ "$DIALOG_RESULT" = "reboot" ];
 then
-    exec reboot
+	doas reboot
 elif [ "$DIALOG_RESULT" = "shutdown" ];
 then
-    exec shutdown -h now
+    	doas poweroff
 fi
