@@ -62,3 +62,5 @@ export NPM_CONFIG_USERCONFIG="$ETC/npmrc"
 export NPM_CONFIG_GLOBALCONFIG=/etc/npmrc
 
 [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ] && exec startx
+
+export PATH="/home/aws/opt/cargo/bin:$PATH"
