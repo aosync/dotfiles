@@ -1,3 +1,3 @@
 #!/bin/sh
 
-firefox teams.microsoft.com
+$BROWSER teams.microsoft.com

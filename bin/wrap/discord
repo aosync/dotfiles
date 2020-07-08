@@ -1,5 +1,5 @@
 #!/bin/sh
 
-firefox https://discord.com/app
+$BROWSER https://discord.com/app
 
-#HOME="$XDG_DATA_HOME" /usr/bin/discord $@
+#HOME="$XDG_DATA_HOME" apulse /usr/lib/discord/Discord $@
