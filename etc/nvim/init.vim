@@ -1,4 +1,4 @@
-" syntax on
+syntax on
 
 " Do not use more than 16 colors (ideally)
 set notermguicolors t_Co=16

@@ -8,10 +8,10 @@ B $HOME/bin
 E $HOME/etc
 S $HOME/usr/src
 s $HOME/usr/local/share
-O $HOME/opt
+O $HOME/ext
 W $HOME/med/wall
-D $HOME/med/doc
-d $HOME/usr/doc
+D $HOME/doc
+d $HOME/dl
 M $HOME/med
 w $HOME/bin/wrap
 x $HOME/bin/x

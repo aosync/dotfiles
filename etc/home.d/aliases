@@ -15,7 +15,7 @@ a p=echo
 a gall="git add -A"
 a gcm="git commit -m"
 a gs="git status"
-a dotfiles="git --git-dir=$VAR/dots --work-tree=$HOME"
+a dotfiles="git --git-dir=$USR/dots --work-tree=$HOME"
 
 a r=ranger
 

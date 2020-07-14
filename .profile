@@ -7,7 +7,7 @@
 
 export XDG_CACHE_HOME="$VAR/cache"
 export XDG_CONFIG_HOME="$ETC"
-export XDG_DATA_HOME="$USR/local/share"
+export XDG_DATA_HOME="$VAR/local/share"
 export ENV="$XDG_CONFIG_HOME/sh/shrc"
 
 export LANG=en_US.UTF-8
