@@ -78,10 +78,10 @@ XF86AudioMute
 
 # Brightness
 XF86MonBrightnessDown
-    xbacklight -dec 10
+    li 20 -
 
 XF86MonBrightnessUp
-    xbacklight -inc 10
+    li 20 +
 
 # Bluetooth
 shift + XF86Tools

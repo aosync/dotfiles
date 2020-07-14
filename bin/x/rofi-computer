@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DIALOG_RESULT=$(echo -e 'exit wm\nsuspend\nreboot\nshutdown' | rofi -dmenu -i -p "power options" -hide-scrollbar -tokenize -lines 5 -disable-history)
 

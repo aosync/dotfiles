@@ -14,5 +14,5 @@ sep="$(xrdb-get dunst color6)"
 	-sep_color "${sep}" \
 	-frame_color "${sep}" \
 	-font "Cantarell 13" \
-	-frame_width "4" \
+	-frame_width "0" \
     $@

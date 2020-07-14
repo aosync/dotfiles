@@ -1,0 +1,10 @@
+#!/bin/sh
+
+buff=""
+
+for battery in /sys/class/power_supply/BAT?
+do
+    capacity=$(cat "$battery/capacity")
+    status=$(cat "$battery/status")
+    echo "$(basename $battery) $capacity $status"
+done

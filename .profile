@@ -10,6 +10,8 @@ export XDG_CONFIG_HOME="$ETC"
 export XDG_DATA_HOME="$USR/local/share"
 export ENV="$XDG_CONFIG_HOME/sh/shrc"
 
+export LANG=en_US.UTF-8
+
 export PATH="/usr/lib/ccache/bin:$PATH"
 export PATH="$BIN/x:$PATH"
 export PATH="$BIN/wm:$PATH"
@@ -32,8 +34,13 @@ export READER=zathura
 export WM=bspwm
 export WMDIR=/dev/shm/wfs
 
-export CC="clang"
-export CXX="clang++"
+export KISS_HOOK="$BIN/kiss-hook"
+export CFLAGS="-O3 -pipe -march=native"
+export CXXFLAGS="$CFLAGS"
+export MAKEFLAGS="-j4"
+
+export CC="gcc"
+export CXX="g++"
 
 export CCACHE_DIR="$VAR/cache/ccache"
 
@@ -61,6 +68,4 @@ export DENO_INSTALL="$OPT/deno"
 export NPM_CONFIG_USERCONFIG="$ETC/npmrc"
 export NPM_CONFIG_GLOBALCONFIG=/etc/npmrc
 
-[ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ] && exec startx
-
-export PATH="/home/aws/opt/cargo/bin:$PATH"
+[ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ] && exec sx

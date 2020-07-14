@@ -1,6 +1,6 @@
 #!/bin/sh
 date=$(date '+%H%M')
 day=$(date '+%A %d%m')
-b=$(battery)
+b=$(bat)
 
 notify-send "$date" "$day\n$b"

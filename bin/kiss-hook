@@ -1,0 +1,38 @@
+#!/bin/sh
+
+case $TYPE in
+	pre-extract)
+		case $PKG in
+			firefox|firefox-esr|firefox-dbus|rust|llvm|clang)
+				mak_dir="$KISS_TMPDIR/build-$PKG"
+				pkg_dir="$KISS_TMPDIR/pkg-$PKG"
+			;;
+
+			*)
+				log "$PKG" "Activating tmpfs"
+				mak_dir=/tmp/build-$PKG
+				pkg_dir=/tmp/pkg-$PKG
+			;;
+		esac
+
+		mkdir -p "$mak_dir" "$pkg_dir/$PKG/var/db/kiss/installed"
+	;;
+
+	pre-build)
+		IFS=. read -r _start _ < /proc/uptime
+	;;
+
+	post-build)
+		IFS=. read -r _end _ < /proc/uptime
+		(
+			_s=$((_end - _start ))
+			_h=$((_s / 60 / 60 % 24))
+			_m=$((_s / 60 % 60))
+
+			[ "$_h" = 0 ] || _u="${_u}${_h}h "
+			[ "$_m" = 0 ] || _u="${_u}${_m}m "
+
+			log "$PKG" "Build finished in ${_u:-${_s}s}"
+		)
+	;;
+esac

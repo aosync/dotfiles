@@ -1,50 +1,31 @@
 #!/bin/sh
 
-userresources=$XDG_CONFIG_HOME/xorg.d/Xresources
-sysresources=/etc/X11/xinit/.Xresources
+# Load Xresources if present
+xres="$XDG_CONFIG_HOME/xorg.d/Xresources"
+[ -f "$xres" ] && xrdb "$xres"
 
-# merge in defaults and keymaps
+# Launch dbus for current user session
+killall dbus-daemon
+eval $(dbus-launch --sh-syntax)
 
-if [ -f $sysresources ]; then
-    xrdb -merge $sysresources
-
-fi
-
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
-fi
-
-export LANG=en_US.UTF-8
-
-[ -f "$HOME/.profile" ] && . "$HOME/.profile"
-
-# redshift -t 6500:3900 & #
-
-# wal -st -n -R
-xwallpaper --zoom "$(cat $WALL)"
-# xsetroot -solid "$(xrdb-get bspwm color7)"
-
-picom -b --config "$XDG_CONFIG_HOME/picom/picom.conf"
-
+# Set cursor to something good
 xsetroot -cursor_name left_ptr
 
+# Solid background
+hsetroot -solid '#414A4C'
+
+# Compositor
+picom -b --config "$XDG_CONFIG_HOME/picom/picom.conf"
+
+# Colemak TODO: set this in X config instead
 setxkbmap -layout us colemak
-sxhkd -m 1 &
 
-#rm /tmp/lockp
-#xss-lock $BIN/x/lockscreen &
-
+# Notifications
 dunst &
 
-sleep 0.4
-lowbatteryd "$LOWBATTERYD_INTERVAL" "$BATTERY_CRITICAL"
+# Starting low battery notifications daemon
+lowbatteryd "$LOWBATTERYD_INTERVAL" "$BATTERY_CRITICAL" &
 
-#mkdir -p $HOME/fs
+# Starting the wm
+sxhkd -m 1 &
 exec "$WM"
-#initwm
-#exec evd
-
-#x11fs "$HOME/fs"
-#bash -c 'sleep infinity'
-#fusermount -u "$HOME/fs"
-

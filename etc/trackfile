@@ -4,7 +4,8 @@ etc/bspwm/
 etc/dunst/
 etc/home.d/
 etc/gtk-3.0/
-etc/nvim/
+etc/nvim/init.vim
+etc/nvim/coc-settings.json
 etc/picom/
 etc/sh/
 etc/sxhkd/

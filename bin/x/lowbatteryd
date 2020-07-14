@@ -1,39 +1,37 @@
 #!/bin/sh
-
-script_name=$(basename $0)
+# lowbatteryd
 
 battery="/sys/class/power_supply/BAT*"
 interval=$1
 threshold=$2
 
-replace_other_processes() {
-	for pid in $(pidof -x ${script_name}); do
-		[ $pid != $$ ] && kill -9 $pid
-	done
-	return 0
-}
+prev=69
 
 deam() {
-	while true
+	num=0
+	for b in $@
 	do
-		read -r bats < "$1/status"
-		read -r batc < "$1/capacity"
+		read -r bats < "$b/status"
+		read -r batc < "$b/capacity"
 		if [ ${bats} = "Discharging" ] && [ ${batc} -le ${threshold} ]; then
-			notify-send -u critical "Battery $(basename $1) low" "${batc}%"
+			# notify-send -u critical "Battery $(basename $1) low" "${batc}%"
+			num=$((num + 1))
 		fi
-		sleep ${interval}
-	done &
-	echo "Daemon for battery $1 started"
+	done
+	[ $num = $prev ] && return 0
+	prev=$num
+	if [ $num -gt 0 ] && [ $num -lt $# ]; then
+		bspc config border_width 3 || { prev=69 ; return 0 ; }
+		bspc config focused_border_color "$(xrdb-get bspwm color4)"
+	elif [ $num -ge $# ]; then
+		bspc config border_width 3 || { prev=69 ; return 0 ; }
+		bspc config focused_border_color "$(xrdb-get bspwm color1)"
+	else
+		bspc config border_width 0 || prev=69
+	fi
 }
 
-[ $1 = "-s" ] && replace_other_processes && echo "Killed previous daemon" && exit 0
-
-case "$1$2" in
-	''|*[!0-9]*) echo "Interval and critical threshold must be numbers" && exit 1;;
-esac
-
-[ $(pidof -x ${script_name} | wc -w) -ge "3" ] && echo "The daemon is already running, execute ${script_name} -s to kill previous instances." && exit 1
-
-for b in $battery; do
-	deam $b
+while :; do
+	deam $battery
+	sleep ${interval}
 done

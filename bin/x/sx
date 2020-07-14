@@ -1,0 +1,3 @@
+#!/bin/sh
+
+xinit "${XDG_CONFIG_HOME:-~/.config}/xorg.d/xinitrc" $@ -- /usr/bin/X -ardelay 200 -arinterval 20 -dpms -nolisten tcp :0 vt1 -keeptty
