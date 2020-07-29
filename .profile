@@ -52,6 +52,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 
 export BATTERY_CRITICAL=20
 export LOWBATTERYD_INTERVAL=120
+export DOTS_REPO="$USR/dots"
 
 ########################
 # Paths for decluttering
