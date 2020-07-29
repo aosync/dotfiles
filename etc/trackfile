@@ -16,6 +16,4 @@ etc/trackfile
 
 var/local/share/applications/
 
-.irssi/
-
 .profile
