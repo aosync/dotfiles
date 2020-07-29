@@ -39,6 +39,7 @@ call plug#end()
 		nnoremap <C-Left>	 :Vex<CR>
 		nnoremap <C-Down>	 :split 
 		nnoremap <C-Up>		 :Sex<CR>
+		nnoremap <C-e>		 :E<CR>
 		nnoremap <Up>	     <C-w>5-
 		nnoremap <Down>      <C-w>5+
 		nnoremap <Left>      <C-w>10<

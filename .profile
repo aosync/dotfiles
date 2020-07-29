@@ -68,4 +68,4 @@ export DENO_INSTALL="$OPT/deno"
 export NPM_CONFIG_USERCONFIG="$ETC/npmrc"
 export NPM_CONFIG_GLOBALCONFIG=/etc/npmrc
 
-[ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ] && exec sx
+# [ -z "$DISPLAY" ] && [ "$(tty)" = /dev/tty1 ] && exec sx

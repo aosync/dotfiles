@@ -6,7 +6,7 @@ a doas="doas --"
 
 a ls="ls -a --group-directories-first --color"
 a ll="ls -l"
-a rr="rm -R"
+a rr="rm -Rf"
 a c=clear
 a wd=smartpath
 
@@ -16,6 +16,8 @@ a gall="git add -A"
 a gcm="git commit -m"
 a gs="git status"
 a dotfiles="git --git-dir=$USR/dots --work-tree=$HOME"
+
+a scan="doas iwd -d 2>&1 | grep -i 'new network' ; doas iwd &"
 
 a r=ranger
 

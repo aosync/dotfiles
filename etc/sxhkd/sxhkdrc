@@ -10,18 +10,6 @@ super + Escape
 super + Return
 	st
 
-# Rofi
-super + d
-	rofi -show run
-
-# Rofi computer
-super + g
-	rofi-computer
-
-# Ranger
-super + r
-	st ranger
-
 # Start the browser
 super + shift + f
     $BROWSER
@@ -44,15 +32,11 @@ super + shift + j
 
 # Open emoji menu
 super + shift + e
-    	emojis
+    emojis
 
 # Lock screen
 super + shift + x
 	mightylock
-
-# Prevent lock screen on lid close
-super + shift + b
-	lockpreventswitch
 
 # Entire screen
 Print
@@ -61,10 +45,6 @@ Print
 # Region screenshot
 alt + Print
 	screensh -r
-
-# Infos about now
-super + o
-	statenotify
 
 # Volume
 XF86AudioLowerVolume
@@ -82,16 +62,6 @@ XF86MonBrightnessDown
 
 XF86MonBrightnessUp
     li 20 +
-
-# Bluetooth
-shift + XF86Tools
-    sudo bluetoothctl power off && dunstify -u low 'Bluetooth: off'
-
-XF86Tools
-    sudo bluetoothctl power on && dunstify -u low 'Bluetooth: on'
-
-XF86Search
-    st sudo bluetoothctl
 
 
 #######

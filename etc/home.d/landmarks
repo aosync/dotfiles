@@ -6,8 +6,8 @@ done <<EOF
 H $HOME
 B $HOME/bin
 E $HOME/etc
-S $HOME/usr/src
-s $HOME/usr/local/share
+S $HOME/src
+s $HOME/var/local/share
 O $HOME/ext
 W $HOME/med/wall
 D $HOME/doc
