@@ -20,6 +20,7 @@ export PATH="$BIN:$PATH"
 
 export PATH="$PATH:$OPT/cargo/bin"
 export PATH="$PATH:$OPT/deno/bin"
+export PATH="$PATH:$OPT/nim/bin"
 
 export WALL="$XDG_CACHE_HOME/wall"
 export WALL_BLURRED="$XDG_CACHE_HOME/wall_b.png"

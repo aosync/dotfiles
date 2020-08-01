@@ -58,10 +58,10 @@ XF86AudioMute
 
 # Brightness
 XF86MonBrightnessDown
-    li 20 -
+    li 40 -
 
 XF86MonBrightnessUp
-    li 20 +
+    li 40 +
 
 
 #######

@@ -9,6 +9,7 @@ a ll="ls -l"
 a rr="rm -Rf"
 a c=clear
 a wd=smartpath
+a d=date
 
 a p=echo
 
