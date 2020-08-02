@@ -5,7 +5,8 @@
 !st*font: JetBrainsMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=false
 !st*font: ShureTechMono Nerd Font Mono:style=Regular:pixelsize=16:antialias=true:autohint=false
 st*borderpx: 8
-st*font: cherry:style=Bold:pixelsize=13:antialias=false:autohint=true
+!st*font: cherry:style=Bold:pixelsize=13:antialias=false:autohint=true
+st*font: Go Mono:style=Regular:pixelsize=14:antialias=true:autohint=true
 
 #define rofic black_normal, white_normal, blue__normal, cyan__normal, white_bright
 rofi*font: Cantarell 11

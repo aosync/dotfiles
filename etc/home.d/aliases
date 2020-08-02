@@ -24,6 +24,10 @@ a r=ranger
 a v=nvim
 a dv="doas nvim"
 
+n() {
+	echo "$@" >> ~/notes/notes
+}
+
 weather() {
 	loc="$1"
 	[ -z "$loc" ] && loc='?m' ; curl "https://wttr.in/$loc"
