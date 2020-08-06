@@ -19,14 +19,6 @@ set undodir=~/etc/nvim/undodir
 set undofile
 set incsearch
 
-
-call plug#begin('~/etc/nvim/plugged')
-
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'tpope/vim-fugitive'
-
-call plug#end()
-
 """ KEYBINDS
 	" The hard way
 		nmap <Up> <Nop>

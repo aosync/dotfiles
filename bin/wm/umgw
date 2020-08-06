@@ -1,9 +1,0 @@
-#!/bin/sh
-
-wid="$1"
-
-# TODO(aosync)	manage unmanaging windows from any workspace
-#				this might easily be done through the symlinking system
-read -r ws < "$WMDIR/win/$wid/ws"
-
-rm -R "$WMDIR/win/$wid" "$WMDIR/$ws/$wid"

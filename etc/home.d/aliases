@@ -2,8 +2,6 @@
 
 alias a=alias
 
-a doas="doas --"
-
 a ls="ls -a --group-directories-first --color"
 a ll="ls -l"
 a rr="rm -Rf"
@@ -17,12 +15,7 @@ a gall="git add -A"
 a gcm="git commit -m"
 a gs="git status"
 
-a scan="doas iwd -d 2>&1 | grep -i 'new network' ; doas iwd &"
-
-a r=ranger
-
 a v=nvim
-a dv="doas nvim"
 
 n() {
 	echo "$@" >> ~/notes/notes
@@ -38,7 +31,5 @@ toclip() {
 }
 
 a fetch=neofetch
-
-a pkg="doas pkg"
 
 . "$XDG_CONFIG_HOME/home.d/landmarks"

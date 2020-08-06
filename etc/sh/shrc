@@ -1,4 +1,6 @@
 #!/bin/sh
 
+clear
+
 . "$XDG_CONFIG_HOME/home.d/aliases"
 PS1='-> '

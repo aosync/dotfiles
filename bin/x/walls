@@ -1,5 +1,0 @@
-#!/bin/sh
-
-[ ! -z $1 ] && ar="/$1"
-
-find "$MED/wall$ar" -type f | shuf | sxiv -

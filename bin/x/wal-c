@@ -1,7 +1,0 @@
-#!/bin/sh
-
-xwallpaper --zoom $1
-
-echo "$(readlink -f $1)" > "$WALL"
-
-convert "$1" -resize 1920x1080 -thumbnail 1920 -scale 25% -blur 0x8 -scale 400% -fill "#000" -colorize 32% "$WALL_BLURRED"
