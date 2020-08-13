@@ -1,0 +1,39 @@
+
+#!/bin/sh
+# +
+
+first=$1
+case $1 in
+  +|s|m|d)
+    shift
+    set -- $($first $@)
+	;;
+esac
+
+second=$2
+case $2 in
+  +|s|m|d)
+	old=$1
+    shift
+    set -- $old $($second $@)
+	;;
+esac
+
+case ${0##*/} in
+	+)
+		op="+"
+		;;
+	s)
+		op="-"
+		;;
+	m)
+		op="*"
+		;;
+	d)
+		op="/"
+		;;
+esac
+
+echo "$1 $op $2" >&2
+
+echo "$1 $op $2" | bc 2>/dev/null ; shift 2 ; echo " $@"

@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+"$HOME/../usr/bin/clang" "${@/-march=native/}" -v
