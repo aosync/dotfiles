@@ -17,6 +17,9 @@ a gs="git status"
 
 a v=nvim
 
+a r=ranger
+a rs="ranger ~/storage/shared"
+
 n() {
 	echo "$@" >> ~/notes/notes
 }
