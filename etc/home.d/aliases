@@ -1,0 +1,84 @@
+#!/bin/sh 
+alias a=alias
+
+a doas="doas --"
+
+a ls="ls -a"
+a ll="ls -lahFo"
+a rr="rm -Rf"
+a cp="cp -ip"
+a mv="mv -i"
+a free="free -h"
+a df="df -h"
+a dfr="df /dev/sda2"
+a c=clear
+a wd=smartpath
+a d=date
+a z=zathura
+
+mansplain() {
+	MANPAGER=cat man -T pdf $@ | curl -s -F"file=@-" http://0x0.st | awk "{print \"$1: \"\$1}" | wl-copy
+}
+
+a p=echo
+
+a gall="git add -A"
+a gcm="git commit -m"
+a gs="git status"
+
+a r=ranger
+
+a v=nvim
+a dv="doas nvim"
+
+n() {
+	echo "$@" >> ~/notes/notes
+}
+
+weather() {
+	loc="$1"
+	[ -z "$loc" ] && loc='?m' ; curl "https://wttr.in/$loc"
+}
+
+toclip() {
+	cat "$1" | xclip -sel clip -i
+}
+
+kpatch() {
+	patch=$1
+	shift
+	git send-email \
+		--cc-cmd="./scripts/get_maintainer.pl --norolestats $patch" \
+		$@ $patch
+}
+
+dllatest() {
+	set -- $(/bin/ls -t1 "$HOME/dl")
+	LATEST="$HOME/dl/$1"
+}
+
+mvto() {
+	uni="$HOME/doc/uni"
+	[ -d "$uni/$1" ] && where="$uni/$1" || where="$1"
+	dllatest
+	mv -v "$LATEST" "$where"
+	LATEST="$where/${LATEST##*/}"
+}
+
+open() {
+	[ -z "$LATEST" ] && dllatest
+	plumb "$LATEST"
+}
+
+clock() {
+	font=$(xrdb-get st font)
+	font="${font//pixelsize=[0-9]*:/pixelsize=20:}"
+	st -f "$font" -c clockst -e watch -tn 60 'echo -n $(date +"%H:%M")' >/dev/null 2>&1 &
+}
+
+
+a fet.sh="info='user os kern wm sh term col' fet.sh"
+
+a pkg="doas pkg"
+
+. "$XDG_CONFIG_HOME/home.d/landmarks"

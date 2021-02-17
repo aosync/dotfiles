@@ -1,0 +1,12 @@
+#!/bin/sh
+
+#n="$SCREENSHOTS/$(date '+%d%m%Y_%s.png')"
+
+if [ "$1" = "-r" ]; then
+	geo="$(slurp)"
+	# grim -g "$geo" - | tee $n | wl-copy
+	grim -g "$geo" - | wl-copy
+else
+	# grim - | tee $n | wl-copy
+	grim - | wl-copy
+fi

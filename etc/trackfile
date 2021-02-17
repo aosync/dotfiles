@@ -1,0 +1,16 @@
+bin/
+
+etc/sway/
+etc/hikari/
+etc/gtk-3.0/
+etc/home.d/
+etc/nvim/init.vim
+etc/nvim/coc-settings.json
+etc/picom/
+etc/sh/
+etc/xorg.d/
+etc/pythonrc
+etc/trackfile
+etc/user-dirs.dirs
+
+.profile

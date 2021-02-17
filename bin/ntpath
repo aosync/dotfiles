@@ -1,0 +1,13 @@
+#!/bin/sh
+
+[ "$1" = -p ] && ps1ed=y && shift
+
+p="${1:-$PWD}"
+root="${p#/mnt/}"
+backsl="${p#/mnt/}"
+backslf="${backsl#*/}"
+[ "$backslf" = "$backsl" ] && backslf=
+root="${root%%/*}"
+[ -z "$root" ] && root="${root:-C}"
+[ ! -z "$ps1ed" ] && backslf="\\\\${backslf//\//\\\\}" || backslf="\\${backslf//\//\\}"
+echo "$root:$backslf"

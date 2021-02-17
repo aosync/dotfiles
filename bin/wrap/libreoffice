@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/libreoffice "$@" >/dev/null 2>&1 &

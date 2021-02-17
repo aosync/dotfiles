@@ -1,0 +1,11 @@
+#!/bin/sh
+
+eth="enp0s25"
+wifi="wlp3s0"
+
+ip link show $eth | grep 'state UP' >/dev/null && int=$eth || int=$wifi
+
+ssid=$(iw dev "$int" info | grep ssid | cut -d' ' -f2)
+buf="$ssid"
+buf="$buf $(ping -c1 -s1 8.8.8.8 >/dev/null 2>&1 && echo "OK" || echo "Down")"
+echo "$buf" | awk '{$1=$1};1'

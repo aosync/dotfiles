@@ -1,0 +1,20 @@
+#define gb_bg          #282828
+#define gb_fg          #ebdbb2
+#define gb_fg0         #fbf1c7
+#define gb_bg0_h       #1d2021
+#define gb_bg0_s       #32302f
+
+#define gb_dark_red    #cc241d
+#define gb_dark_green  #98971a
+#define gb_dark_yellow #d79921
+#define gb_dark_blue   #458588
+#define gb_dark_purple #b16286
+#define gb_dark_aqua   #689d6a
+#define gb_gray1       #a89984
+#define gb_gray2       #928374
+#define gb_red         #fb4934
+#define gb_green       #b8bb26
+#define gb_yellow      #fabd2f
+#define gb_blue        #83a598
+#define gb_purple      #d3869b
+#define gb_aqua        #8ec07c

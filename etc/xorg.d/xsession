@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# $OpenBSD: Xsession.in,v 1.1 2017/07/26 21:14:54 matthieu Exp $
+prefix="/usr/X11R6"
+exec_prefix="${prefix}"
+
+. $HOME/.profile
+
+xset r rate 200 50
+resources=$XDG_CONFIG_HOME/xorg.d/Xresources
+
+if [ -f "$resources" ]; then
+	/usr/X11R6/bin/xrdb -load "$resources"
+fi
+
+# hsetroot -solid '#434343' &
+hsetroot -fill "$WALL" &
+
+xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 -f -D2 &
+
+pkill redshift
+read -r loc < "$XDG_CONFIG_HOME/location"
+redshift -l "$loc" -t 6500:3600 -m randr >/dev/null 2>&1 &
+
+sxhkd -m 1 &
+"$WM"

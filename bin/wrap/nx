@@ -1,0 +1,17 @@
+#!/bin/sh
+
+ls /sucks >/dev/null 2>&1 && exit
+
+f5fpc --start --host vpn.uliege.be
+
+export SPLM_LICENSE_SERVER="28000@pegase.ltas.ulg.ac.be"
+export UGII_BASE_DIR="/usr/nx"
+export HOME=/nxshit
+export PATH="$HOME/bin:$PATH"
+cd
+
+sh
+
+f5fpc --stop
+
+echo "NX shell exitted"

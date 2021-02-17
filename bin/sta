@@ -1,0 +1,8 @@
+#!/bin/sh
+date=$(date '+%H%M')
+day=$(date '+%A %d%m')
+b=$(bat)
+
+echo "$date"
+echo "$day"
+echo "$b"

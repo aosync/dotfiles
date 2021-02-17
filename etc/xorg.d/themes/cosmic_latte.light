@@ -1,0 +1,16 @@
+#define black_normal #fff8e7
+#define red___normal #c44756
+#define green_normal #1f8332
+#define gold__normal #916d03
+#define blue__normal #0075c9
+#define mgnta_normal #a154ae
+#define cyan__normal #007f8a
+#define white_normal #485a62
+#define black_bright #63757e
+#define red___bright #c44756
+#define green_bright #1f8332
+#define gold__bright #916d03
+#define blue__bright #0075c9
+#define mgnta_bright #a154ae
+#define cyan__bright #007f8a
+#define white_bright #364850

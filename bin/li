@@ -1,0 +1,27 @@
+#!/bin/sh
+
+for i in /sys/class/backlight/*; do
+	dev=$i
+	break
+done
+
+[ -z "$dev" ] && exit 1
+
+read -r max < "$dev/max_brightness"
+read -r curr < "$dev/brightness"
+
+case $2 in
+	+)
+		wanted=$(( $curr + $1 ))
+		;;
+	-)
+		wanted=$(( $curr - $1 ))
+		;;
+	*)
+		wanted=$1
+		;;
+esac
+
+[ $wanted -gt $max ] && wanted=$max
+[ $wanted -lt "0" ] && wanted="0"
+doas -- sh -c "echo $wanted > $dev/brightness"

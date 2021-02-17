@@ -1,0 +1,20 @@
+#!/bin/sh
+
+nullptr="http://0x0.st"
+
+[ -z "$1" ] && exit 1
+
+case $2 in
+	-s)
+		l=$(curl -s -F"shorten=$1" $nullptr)
+		;;
+	-u)
+		l=$(curl -s -F"url=$1" $nullptr)
+		;;
+	*)
+		l=$(curl -s -F"file=@$1" $nullptr)
+		;;
+esac
+
+echo "$l" | xclip -sel clip -i 2> /dev/null
+echo "$l"

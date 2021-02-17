@@ -1,0 +1,22 @@
+#!/bin/sh
+
+while read -r lbl dest; do
+	a "g$lbl"="cd $dest"
+done <<EOF
+H $HOME
+B $HOME/bin
+E $HOME/.config
+S $HOME/src
+s $HOME/usr
+O $HOME/ext
+W $HOME/med/wall
+D $HOME/doc
+u $HOME/doc/uni
+d $HOME/dl
+M $HOME/med
+w $HOME/bin/wrap
+x $HOME/bin/x
+X $HOME/etc/xorg.d
+h $HOME/etc/home.d
+mn /mnt
+EOF
