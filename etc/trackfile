@@ -1,7 +1,6 @@
 bin/
 
 etc/sway/
-etc/hikari/
 etc/gtk-3.0/
 etc/home.d/
 etc/nvim/init.vim
