@@ -112,4 +112,13 @@ set statusline+=\%#Sl2#\ %l,%c
 
 """ Language things
 au BufWritePost *.go :silent execute "!gofmt -w %" | :e
-au BufWritePost *.ms :silent execute "!./typeset.sh % > %.pdf"
+au BufWritePost *.ms :silent execute "!./typeset.sh %"
+au BufWritePost *.tr :silent execute "!./typeset.sh %"
+au BufWritePost *.troff :silent execute "!./typeset.sh %"
+
+
+call plug#begin('~/usr/nvim/plugged')
+
+Plug 'Gavinok/vim-troff'
+
+call plug#end()
