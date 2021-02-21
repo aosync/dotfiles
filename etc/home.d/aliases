@@ -5,6 +5,7 @@ a doas="doas --"
 
 a ls="ls -a"
 a ll="ls -lahFo"
+a rm="rm -i"
 a rr="rm -Rf"
 a cp="cp -ip"
 a mv="mv -i"

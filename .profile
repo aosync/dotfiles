@@ -25,6 +25,9 @@ export WALL="$XDG_CACHE_HOME/wall"
 export WALL_BLURRED="$XDG_CACHE_HOME/wall_b.png"
 export SCREENSHOTS="$MED/screenshots"
 
+NEATROFF="$HOME/ext/neatroff_make"
+export PATH="$PATH:$NEATROFF/bin"
+
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=firefox

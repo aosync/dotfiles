@@ -13,7 +13,7 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.config/nvim/undodir
+set undodir=~/etc/nvim/undodir
 set undofile
 set incsearch
 
@@ -25,6 +25,10 @@ set incsearch
 		nmap <Down> <Nop>
 		nmap <Left> <Nop>
 		nmap <Right> <Nop>
+
+	" Center
+		nnoremap j jzz
+		nnoremap k kzz
 	
 	" Switching between windows
 		nnoremap <C-Right>	 :vsplit 

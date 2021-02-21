@@ -3,6 +3,7 @@ bin/
 etc/sway/
 etc/gtk-3.0/
 etc/home.d/
+etc/alacritty
 etc/nvim/init.vim
 etc/nvim/coc-settings.json
 etc/picom/
