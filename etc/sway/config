@@ -79,6 +79,10 @@ bindsym $mod+Shift+x exec swaylock
 bindsym Print exec scr
 bindsym $mod+Print exec scr -r
 
+# Volume
+bindsym XF86AudioRaiseVolume exec mixer vol +5
+bindsym XF86AudioLowerVolume exec mixer vol -5
+
 # 
 # Compositor internals
 #
