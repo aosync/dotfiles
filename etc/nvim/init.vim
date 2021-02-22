@@ -46,12 +46,12 @@ set incsearch
 		nnoremap <C-l>	     <C-w><Right>
 	
 	" Close things that should be closed
-		inoremap (			()<Left>
-		inoremap [			[]<Left>
-		inoremap {<CR>		{}<Left><CR><Esc>O
-		inoremap {}			{}<Left>
-		inoremap "			""<Left>
-		inoremap '<Space>	''<Left>
+		"inoremap (			()<Left>
+		"inoremap [			[]<Left>
+		"inoremap {<CR>		{}<Left><Left><CR><Right><CR><Esc>O
+		"inoremap {}			{}<Left>
+		"inoremap "			""<Left>
+		"noremap '<Space>	''<Left>
 
 " status line, based on gk's, themselves based on lena's
 set noshowmode
