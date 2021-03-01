@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ ! -d "/tmp/aws" ] && mkdir /tmp/aws
+export XDG_RUNTIME_DIR="/tmp/aws"
+
+exec dbus-launch --exit-with-session $WM "$@"

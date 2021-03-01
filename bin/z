@@ -1,0 +1,3 @@
+#!/bin/sh
+
+zathura "$@" >/dev/null 2>&1 &

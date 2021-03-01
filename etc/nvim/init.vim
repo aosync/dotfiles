@@ -10,6 +10,7 @@ set smartindent
 "set nu
 "set rnu
 set nowrap
+set scrolloff=999
 set smartcase
 set noswapfile
 set nobackup
@@ -27,8 +28,8 @@ set incsearch
 		nmap <Right> <Nop>
 
 	" Center
-		nnoremap j jzz
-		nnoremap k kzz
+	"	nnoremap j jzz
+	"	nnoremap k kzz
 	
 	" Switching between windows
 		nnoremap <C-Right>	 :vsplit 
@@ -120,5 +121,13 @@ au BufWritePost *.troff :silent execute "!./typeset.sh %"
 call plug#begin('~/usr/nvim/plugged')
 
 Plug 'Gavinok/vim-troff'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-surround'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
+
+set updatetime=100

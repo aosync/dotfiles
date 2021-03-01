@@ -44,7 +44,7 @@ export CXX="c++"
 
 export NODE_REPL_HISTORY=''
 
-export XDG_RUNTIME_DIR="/tmp"
+export XDG_RUNTIME_DIR="/tmp/aws"
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_X11_EGL=1
 export XKB_DEFAULT_LAYOUT="us"

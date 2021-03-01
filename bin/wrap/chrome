@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if ! pgrep -x pulseaudio; then
+	pulseaudio --start
+else
+	echo not starting pulseaudio
+fi
+
+/compat/linux/bin/chrome "$@"
+chr=$?
+
+#sleep 1
+
+if ! pgrep -x chrome && [ ! "$chr" = 24 ]; then
+	pkill pulseaudio
+fi
