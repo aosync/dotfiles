@@ -3,7 +3,7 @@ alias a=alias
 
 a doas="doas --"
 
-a ls="ls -a"
+a ls="ls -1"
 a ll="ls -lahFo"
 a rm="rm -I"
 a rr="rm -RI"
@@ -15,6 +15,10 @@ a dfr="df /dev/sda2"
 a c=clear
 a wd=smartpath
 a d=date
+
+a keep="$BROWSER keep.google.com"
+a uni="$BROWSER my.uliege.be"
+
 
 mansplain() {
 	MANPAGER=cat man -T pdf $@ | curl -s -F"file=@-" http://0x0.st | awk "{print \"$1: \"\$1}" | wl-copy
@@ -68,6 +72,10 @@ mvto() {
 open() {
 	[ -z "$LATEST" ] && dllatest
 	plumb "$LATEST"
+}
+
+lc() {
+	ls $@ | 9 mc
 }
 
 clock() {

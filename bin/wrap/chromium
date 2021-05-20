@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/local/bin/chrome --use-gl=egl $@ >/dev/null 2>&1 & 

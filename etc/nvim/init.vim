@@ -18,6 +18,10 @@ set undodir=~/etc/nvim/undodir
 set undofile
 set incsearch
 
+au BufEnter *.eml setl tw=60 fo=aw2tq
+
+au BufEnter *.py let g:lsp_diagnostics_enabled = 0
+
 "colorscheme aosync
 
 """ KEYBINDS
@@ -45,6 +49,7 @@ set incsearch
 		nnoremap <C-k>	     <C-w><Up>
 		nnoremap <C-j>	     <C-w><Down>
 		nnoremap <C-l>	     <C-w><Right>
+		tnoremap <Esc>		 <C-\><C-n>
 	
 	" Close things that should be closed
 		"inoremap (			()<Left>

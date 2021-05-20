@@ -65,12 +65,9 @@ bindsym $mod+Shift+f exec $browser
 bindsym $mod+Shift+o exec $browser keep.google.com
 bindsym $mod+Shift+u exec $browser my.uliege.be
 bindsym $mod+Shift+d exec $browser discord.com/app
-bindsym $mod+Shift+z exec pcmanfm
 bindsym $mod+shift+n exec netsurf-gtk
 bindsym $mod+shift+s exec sam
 bindsym $mod+shift+a exec acme
-bindsym $mod+shift+m exec emacsclient -c
-bindsym $mod+shift+t exec thunderbird
 
 # Kill focused window
 bindsym $mod+q kill
@@ -220,8 +217,6 @@ exec_always {
     gsettings set org.gnome.desktop.interface cursor-size $cursor_size
 }
 
-for_window [app_id="pcmanfm"] floating enable
-for_window [app_id="Alacritty"] floating enable
 
 #
 # Status Bar:
@@ -232,7 +227,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date -v+2H +"$(apm -l)%% | %d-%m %H:%M"; do sleep 60; done
+    status_command while date -v+1H +"$(apm -l)%% | %d-%m %H:%M"; do sleep 60; done
 
     colors {
         statusline #ffffff

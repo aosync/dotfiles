@@ -1,6 +1,14 @@
 #!/bin/sh
 
-[ ! -d "/tmp/aws" ] && mkdir /tmp/aws
-export XDG_RUNTIME_DIR="/tmp/aws"
+emacs --daemon >/dev/null 2>&1 &
+
+mkdir -p /tmp/aws
+
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_X11_EGL=1
+
+pulseaudio --start
+# pipewire &
+# /usr/local/libexec/xdg-desktop-portal-wlr &
 
 exec dbus-launch --exit-with-session $WM "$@"

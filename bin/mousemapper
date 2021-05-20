@@ -1,0 +1,73 @@
+#!/bin/bash
+
+keyboard=$(libinput list-devices | grep keyboard -B4 | grep -E "keyboard$" -A1 | grep -o '/dev/input/event[1-9]*')
+event_type=EV_KEY
+action_type=POINTER_BUTTON
+pressed="pressed,"
+released="released,"
+
+one_pressed=0
+two_pressed=0
+three_pressed=0
+
+readarray -t devices <<<$(libinput list-devices | grep pointer -B4 | grep -o '/dev/input/event[0-9]*')
+
+# COMMANDS MAP
+BTN_EXTRA=(KEY_LEFTMETA KEY_PAGEUP)
+BTN_SIDE=(KEY_LEFTMETA KEY_PAGEDOWN)
+
+function pressKey(){
+    device=$1; key=$2; value=$3
+    # echo "pressing ${key} ${value}"
+    evemu-event ${keyboard} --sync --type ${event_type} --code ${key} --value ${value};
+}
+
+function pressCommand(){
+    device=$1; button=$2; movement=$3
+    var=$button[@]
+    if [ ${movement} = ${pressed} ]; then
+		case $2 in
+			BTN_LEFT)	one_pressed=1 ;;
+			BTN_MIDDLE)	two_pressed=1 ;;
+			BTN_RIGHT)	three_pressed=1 ;;
+		esac
+		echo $one_pressed $two_pressed $three_pressed
+	else
+		case $2 in
+			BTN_LEFT)	one_pressed=0 ;;
+			BTN_MIDDLE)	two_pressed=0 ;;
+			BTN_RIGHT)	three_pressed=0 ;;
+		esac
+		echo $one_pressed $two_pressed $three_pressed
+    fi
+}
+
+function parseEventLine(){
+    device=$1
+    action=$2
+    button=$4
+    movement=$6
+
+    # compute only if right action
+    if [ ${action} = ${action_type} ]; then
+        pressCommand ${device} ${button} ${movement}
+    fi
+}
+
+function mapDevice(){
+    device=$1
+    while read line; do
+        parseEventLine ${line}
+    done < <(stdbuf -oL libinput debug-events --device ${device} & )
+}
+
+if [[ ${devices[0]} == '' ]]; then
+  echo "No Pointers Found. Try again."
+  exit 1
+fi
+
+for device in ${devices[@]}; do
+    ( mapDevice ${device} ) &
+done
+
+wait

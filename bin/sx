@@ -1,0 +1,9 @@
+#!/bin/sh
+
+emacs --daemon >/dev/null 2>&1 &
+
+mkdir -p /tmp/aws
+
+export BROWSER=chromium
+
+exec startx

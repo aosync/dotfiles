@@ -1,0 +1,9 @@
+#!/bin/sh
+# trcomp
+
+while :; do
+	if [ "$1" -nt "$1.pdf" ]; then
+		./typeset.sh "$1"
+	fi
+	sleep 2
+done

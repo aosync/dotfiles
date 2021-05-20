@@ -1,0 +1,20 @@
+#!/bin/sh
+
+cd $XDG_RUNTIME_DIR
+
+clip=
+
+while :; do
+	for w in wayland-*; do
+		loclip=$(WAYLAND_DISPLAY=$w wl-paste 2>/dev/null) || continue
+		if [ ! "$loclip" = "$clip" ]; then
+			echo gotta change
+			for wi in wayland-*; do
+				[ "$wi" = "$w" ] && continue
+				WAYLAND_DISPLAY="$wi" wl-copy "$loclip" >/dev/null 2>&1
+			done
+			clip="$loclip"
+		fi
+	done
+	sleep 1
+done

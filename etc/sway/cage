@@ -1,0 +1,3 @@
+default_border pixel 0
+for_window [class=".*"] fullscreen enable
+exec scagewrap $wrapped

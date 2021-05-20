@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$1" = "-r" ]; then
+	maim -s /dev/stdout | xclip -sel clip -t image/png
+else
+	maim /dev/stdout | xclip -sel clip -t image/png
+fi

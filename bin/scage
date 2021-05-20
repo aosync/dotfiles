@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export wrapped=$@
+
+sway -c "$XDG_CONFIG_HOME/sway/cage"

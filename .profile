@@ -28,12 +28,18 @@ export SCREENSHOTS="$MED/screenshots"
 NEATROFF="$HOME/ext/neatroff_make"
 export PATH="$PATH:$NEATROFF/bin"
 
+SAM="$HOME/ext/sam"
+export PATH="$PATH:$SAM/bin/bin"
+
+PLAN9="/usr/local/plan9"
+export PATH="$PATH:$PLAN9/bin"
+
 export EDITOR=nvim
-export VISUAL=nvim
+export VISUAL=emacs
 export BROWSER=firefox
 export TERMINAL=alacritty
 export READER=zathura
-export WM=sway
+export WM=wayfire
 
 export CFLAGS="-O3 -pipe -march=native"
 export CXXFLAGS="$CFLAGS"
@@ -45,14 +51,13 @@ export CXX="c++"
 export NODE_REPL_HISTORY=''
 
 export XDG_RUNTIME_DIR="/tmp/aws"
-export MOZ_ENABLE_WAYLAND=1
-export MOZ_X11_EGL=1
 export XKB_DEFAULT_LAYOUT="us"
 export XKB_DEFAULT_VARIANT="colemak"
 
 export BATTERY_CRITICAL=20
 export LOWBATTERYD_INTERVAL=120
 export DOTS_REPO="$USR/dots"
+export FVMW_USERDIR="$XDG_CONFIG_HOME/fvwm"
 
 ########################
 # Paths for decluttering
@@ -67,6 +72,7 @@ export PATH="$PATH:$GOPATH/bin"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/pythonrc"
 # export XAUTHORITY="$XDG_CACHE_HOME/Xauthority"
 export CARGO_HOME="$OPT/cargo"
+. "$OPT/cargo/env"
 export RUSTUP_HOME="$OPT/rustup"
 export DENO_INSTALL="$OPT/deno"
 export NPM_CONFIG_USERCONFIG="$ETC/npmrc"
