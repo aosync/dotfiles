@@ -1,0 +1,4 @@
+#!/bin/sh
+
+wl-paste | curl -s -F'file=@/dev/stdin' https://0x0.st/ | wl-copy
+

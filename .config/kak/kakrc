@@ -1,0 +1,35 @@
+# the default global tabstop at 8, it is what i want
+# set the indentwidth (autoindent) to be a tab
+set global indentwidth 0
+
+# except python, where i want it to be 4 spaces
+hook global WinSetOption filetype=(python|haskell) %{
+	set buffer indentwidth 4
+	map buffer insert <tab> '    '
+}
+
+# yank to system clipboard
+hook global NormalKey '[ydc]' %{
+	nop %sh{
+		(printf '%s' "$kak_main_reg_dquote" | wl-copy) < /dev/null > /dev/null 2>&1 &
+	}
+}
+map global user p -docstring 'Paste (After)' '<a-!>wl-paste<ret>'
+map global user P -docstring 'Paste (Before)' '!wl-paste<ret>'
+map global user R -docstring 'Replace' '|wl-paste<ret>'
+
+# enable lsp
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(c|cpp|rust) %{
+	lsp-enable-window
+}
+
+hook global WinSetOption filetype=(plain|markdown) %{
+	set buffer formatcmd 'fmt'
+}
+
+# detect troff
+hook global BufCreate .*\.(tr|ms|troff|md) %{
+	set-option buffer filetype troff
+	add-highlighter buffer/ wrap
+}

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mkdir -p /tmp/aws
+
+export XDG_RUNTIME_DIR=/tmp/aws
+export MOZ_ENABLE_WAYLAND=1
+export SDL_VIDEODRIVER=wayland
+
+eval $(dbus-launch --sh-syntax)
+
+exec wayfire

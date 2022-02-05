@@ -1,0 +1,8 @@
+font=monospace 13
+text-color=#f1f1ef
+background-color=#2d2d2d
+border-color=#3f3f3f
+height=400
+padding=20
+
+default-timeout=8000

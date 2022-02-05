@@ -1,0 +1,7 @@
+font Go Mono
+autoindent true
+
+bind C a command charleft
+bind C s command charright
+bind C w command lineup
+bind C r command linedown

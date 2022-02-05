@@ -1,0 +1,33 @@
+#!/bin/sh
+
+XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+
+DOTS_HOME=${DOTS_HOME:-$HOME}
+DOTS_BARE=${DOTS_BARE:-$XDG_DATA_HOME/dots}
+
+dots() {
+	git --git-dir $DOTS_BARE --work-tree $DOTS_HOME "$@"
+}
+
+subcommand=$1
+shift
+
+case $subcommand in
+	init)
+		git init --bare $DOTS_BARE
+		;;
+	track)
+		dots add "$@"
+		;;
+	untrack)
+		dots rm --cached "$@"
+		;;
+	ls-changes|lsc)
+		dots status --untracked-files=no "$@"
+		;;
+	ls-tracked|lst)
+		dots ls-files "$@"
+		;;
+	*)
+		dots $subcommand "$@"
+esac
