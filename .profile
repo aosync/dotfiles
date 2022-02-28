@@ -17,6 +17,9 @@
 EDITOR=vi;   	export EDITOR
 PAGER=less;  	export PAGER
 
+[ -f "$HOME/.commonrc" ] && . "$HOME/.commonrc"
+[ -f "$HOME/.platformrc" ] && . "$HOME/.platformrc"
+
 # set ENV to a file invoked each time sh is started for interactive use.
 ENV=$HOME/.shrc; export ENV
 HISTSIZE=500

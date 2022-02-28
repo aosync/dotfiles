@@ -1,10 +1,13 @@
 #!/bin/sh
 
-mkdir -p /tmp/aws
+### sw: start wayland graphical environment
 
-export XDG_RUNTIME_DIR=/tmp/aws
+# create the runtime dir
+mkdir -p $XDG_RUNTIME_DIR
+
+# set application variables
 export MOZ_ENABLE_WAYLAND=1
 export SDL_VIDEODRIVER=wayland
-export XDG_CURRENT_DESKTOP=sway
 
-exec dbus-launch sway
+export INGUI=1
+exec dbus-launch $DISPLAY_SERVER $DISPLAY_SERVER_ARGS
