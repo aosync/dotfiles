@@ -1,0 +1,17 @@
+#!/bin/sh
+
+battery=""
+
+case $(apm -a) in
+	0) ;;
+	1)
+		battery="AC "
+		;;
+	2)
+		battery="Reserve "
+		;;
+esac
+
+battery="$battery$(apm -l)%%"
+
+date +"$battery %d/%m %H:%M"
