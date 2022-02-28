@@ -11,8 +11,6 @@ for m in $MEDIA_SESSION; do
 	pids="$pids $!"
 done
 	
-
-export INGUI=1
 dbus-launch $DISPLAY_SERVER $DISPLAY_SERVER_ARGS
 
 kill $pids
