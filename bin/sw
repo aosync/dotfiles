@@ -9,5 +9,14 @@ mkdir -p $XDG_RUNTIME_DIR
 export MOZ_ENABLE_WAYLAND=1
 export SDL_VIDEODRIVER=wayland
 
+pids=""
+for m in $MEDIA_SESSION; do
+	$m >/dev/null 2>&1 &
+	pids="$pids $!"
+done
+	
+
 export INGUI=1
-exec dbus-launch $DISPLAY_SERVER $DISPLAY_SERVER_ARGS
+dbus-launch $DISPLAY_SERVER $DISPLAY_SERVER_ARGS
+
+kill $pids
