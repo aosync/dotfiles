@@ -1,7 +1,7 @@
-font=monospace 13
-text-color=#f1f1ef
-background-color=#2d2d2d
-border-color=#3f3f3f
+font=Go Mono 13
+text-color=#eae6e6
+background-color=#292828
+border-color=#292828
 height=400
 padding=20
 

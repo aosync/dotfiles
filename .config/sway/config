@@ -3,6 +3,8 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
+font pango:Go Mono 11
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -17,7 +19,22 @@ set $browser firefox
 
 ### Output configuration
 
-output * bg /home/aws/Documents/Wallpapers/wall fill
+set $term_bg '#4a2f2f'
+set $term_fg '#eae6e6'
+set $gray_dark '#a19595'
+set $black_dark '#292828'
+set $black '#3a3939'
+set $red_dark '#4f2020'
+set $red '#712e2e'
+set $green_dark '#6f7533'
+set $green '#848b3d'
+set $yellow_dark '#cdae46'
+set $yellow '#f0ca81'
+set $blue_dark '#286aa0'
+set $blue '#4e96d4'
+
+output * bg $red_dark solid_color
+# output * bg /home/aws/Documents/Wallpapers/wall fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 output DP-2 resolution 1024x768 scale 0.7
@@ -25,7 +42,7 @@ output DP-2 resolution 1024x768 scale 0.7
 ### Core config
 
 # pure wayland
-xwayland disable
+xwayland force
 
 # cursor theme
 seat seat0 xcursor_theme Adwaita 24
@@ -38,7 +55,7 @@ for_window [app_id=".*"] split toggle
 exec mako
 exec wlsunset -l 50.5 -L 5.5
 exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
+	timeout 300 'swaylock -f -c $red_dark' \
 	timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 
 # gaps
@@ -93,7 +110,7 @@ input type:keyboard {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
     # Lock
-    bindsym $mod+Shift+x exec swaylock
+    bindsym $mod+Shift+x exec swaylock -f -c '$red_dark'
 #
 # Moving around:
 #
@@ -207,6 +224,11 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+client.focused $red $red $term_fg $red
+
+client.unfocused $black_dark $black_dark $term_fg $red
+client.focused_inactive $black_dark $black_dark $term_fg $red
+
 #
 # Status Bar:
 #
@@ -220,8 +242,9 @@ bar {
 
     colors {
         statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        background $red
+        inactive_workspace $red $red $term_fg
+        focused_workspace $green_dark $green_dark $term_fg
     }
 }
 
